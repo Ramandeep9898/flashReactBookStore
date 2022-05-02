@@ -1,30 +1,41 @@
 import { v4 as uuid } from "uuid";
 
-/**
- * Product Database can be added here.
- * You can add products of your wish with different attributes
- * */
-
 export const products = [
   {
     _id: uuid(),
-    title: "You Can WIN",
-    author: "Shiv Khera",
-    price: "5000",
-    categoryName: "non-fiction",
+    title: "12 Rules for Life: An Antidote to Chaos",
+    subTitle:
+      "Paperback – 2 March 2021",
+    img: "https://images-na.ssl-images-amazon.com/images/I/41kspFBwVxL._SX331_BO1,204,203,200_.jpg",
+    originalPrice: "2000",
+    discountedPrice: "1900",
+    author: "Jordan B. Peterson",
+    rating: "4.5",
+    categoryName: "Self-help",
   },
   {
     _id: uuid(),
-    title: "You are Winner",
-    author: "Junaid Qureshi",
-    price: "3000",
-    categoryName: "horror",
+    title: "Beyond Order: 12 More Rules for Life",
+    subTitle:
+      "Paperback – 2 March 2021",
+    img: "https://images-na.ssl-images-amazon.com/images/I/41Bhl964Z3L._SX325_BO1,204,203,200_.jpg",
+    originalPrice: "600",
+    discountedPrice: "550",
+    author: "Jordan B. Peterson",
+    rating: "4.5",
+    categoryName: "Self-help",
   },
   {
     _id: uuid(),
-    title: "Think and Grow Rich",
-    author: "Shiv Khera",
-    price: "1000",
-    categoryName: "fiction",
+    title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    subTitle:
+      "Paperback – 30 October 2018",
+    img: "https://images-na.ssl-images-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg",
+    originalPrice: "600",
+    discountedPrice: "550",
+    author: "James Clear",
+    rating: "4.6",
+    categoryName: "Self-help",
   },
+  
 ];

@@ -1,6 +1,10 @@
 import "./App.css";
-import Header  from "./components/Header.component/Header.jsx";
+import "./style/style.css";
+// import Header  from "./components/Header.component/Header.jsx";
 import Home from "./pages/Home";
+import ProductListingMain from "./components/ProductListMain.component/ProductListMain";
+// import Aside from "./components/Aside.component/Aside";
+// import ProductCard from "./components/ProductCard.Component/ProductCard";
 // import Login from "./pages/Login";
 // import ProductListing from "./pages/ProductListing";
 // import { SignUp } from "./pages/SignUp";
@@ -13,14 +17,16 @@ function App() {
   return (
     <div className="App">
       <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/" element={<Header />} />
-      {/* <Route path="/login" element={<Login />} /> */}
-      {/* <Route path="/signup" element={<SignUp />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/products" element={<ProductListing />} />
-      <Route path="/wishlist" element={<Wishlist />} /> */}
-      <Route path="/mockman" element={<MockmanEs />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<ProductListingMain />} />
+        {/* <Route path="/" element={<Aside />} /> */}
+        {/* <Route path="/" element={<ProductCard />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/signup" element={<SignUp />} /> */}
+        {/* <Route path="/cart" element={<Cart />} /> */}
+        {/* <Route path="/products" element={<ProductListing />} /> */}
+        {/* <Route path="/wishlist" element={<Wishlist />} /> */}
+        {/* <Route path="/mockman" element={<MockmanEs />} /> */}
       </Routes>
     </div>
   );

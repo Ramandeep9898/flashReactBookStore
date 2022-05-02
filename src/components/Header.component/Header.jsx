@@ -11,7 +11,7 @@ const Header = () => {
             <section className="nav-container-startsec">
             <Link to="/">
             <img src="" alt="logo"/></Link>
-             <span className="nav-title">flash.store</span>
+            <span className="nav-title">flash.store</span>
             </section>
 
             <section className="nav-container-startsec nav-search">
@@ -21,7 +21,6 @@ const Header = () => {
                     </button>
                     <input type="search" placeholder="Search..."/>
                 </div>
-                
             </section>
             
             <section className="nav-container-endsec">
