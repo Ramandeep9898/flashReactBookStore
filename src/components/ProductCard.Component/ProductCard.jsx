@@ -1,9 +1,17 @@
 import react from "react";
 import "./productCard.css";
 import { useData } from "../../customHooks/useData";
+import getSortedProducts from "../Aside.component/getSortedProducts";
+import { useProduct } from "./productContext";
 
-const Products = ({}) => {
+const Products = () => {
+  const { state } = useProduct();
   const { productData, categoryData } = useData();
+  const sortProducts = productData
+    ? getSortedProducts(productData, state.sortBy)
+    : [];
+  console.log(sortProducts);
+
   return (
     <main className="product-page-main">
       <div className="product-page-main-heading mgT-20">
@@ -11,21 +19,16 @@ const Products = ({}) => {
         <span className="h6">(showing 20 products)</span>
       </div>
       <div className="product-cards">
-        {productData.length &&
-          productData.map(
+        {sortProducts.length &&
+          sortProducts.map(
             ({
               _id,
               title,
               subTitle,
-              description,
               img,
               originalPrice,
               discountedPrice,
-              discount,
-              createdBy,
-              language,
-              duration,
-              noOfLectures,
+              author,
               rating,
               categoryName,
             }) => (
