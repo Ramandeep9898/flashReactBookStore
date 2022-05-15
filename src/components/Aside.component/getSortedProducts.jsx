@@ -1,5 +1,4 @@
 const getSortedProducts = (products, sortBy) => {
-  console.log(products);
   if (sortBy === "LOW_TO_HIGH")
     return [...products].sort((a, b) => a.discountedPrice - b.discountedPrice);
   if (sortBy === "HIGH_TO_LOW")

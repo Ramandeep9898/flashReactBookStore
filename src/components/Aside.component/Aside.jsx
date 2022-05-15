@@ -5,8 +5,8 @@ import { useProduct } from "../ProductCard.Component/productContext";
 
 const Aside = () => {
   const { state, dispatch } = useProduct();
-  const { sortBy } = state;
-  //   console.log(dispatch);
+  const { sortBy, discount, categories } = state;
+  const { bestseller, fiction, nonfiction, horror } = categories;
 
   return (
     <aside className="product-page-aside">
@@ -44,11 +44,15 @@ const Aside = () => {
           <ul className="list">
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
-                self-help
+                Best Seller
                 <input
                   type="checkbox"
-                  id="checkbox"
                   className="input-ckeckbox"
+                  name="bestseller"
+                  value="bestseller"
+                  id="checkbox-input"
+                  checked={bestseller}
+                  onChange={(e) => dispatch({ type: "BESTSELLER" })}
                 />
               </span>
             </li>
@@ -56,7 +60,15 @@ const Aside = () => {
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 fiction
-                <input type="checkbox" className="input-ckeckbox" />
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  name="fiction"
+                  value="fiction"
+                  id="checkbox-input"
+                  checked={fiction}
+                  onChange={(e) => dispatch({ type: "FICTION" })}
+                />
               </span>
             </li>
 
@@ -64,49 +76,112 @@ const Aside = () => {
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 non-fiction
-                <input type="checkbox" className="input-ckeckbox" />
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  name="nonfiction"
+                  value="nonFiction"
+                  id="checkbox-input"
+                  checked={nonfiction}
+                  onChange={(e) => dispatch({ type: "NONFICTION" })}
+                />
               </span>
             </li>
 
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 horror
-                <input type="checkbox" className="input-ckeckbox" />
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  name="horror"
+                  value="horror"
+                  id="checkbox-input"
+                  checked={horror}
+                  onChange={(e) => dispatch({ type: "HORROR" })}
+                />
               </span>
             </li>
           </ul>
         </div>
-        {/* rating */}
+        {/* Discount */}
         <div className="aside-sec-heading mgT-40">
-          <p className="h5 color capitalize fW-600">rating</p>
+          <p className="h5 color capitalize fW-600">discount</p>
 
           <ul className="list ">
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
-                4 star & above
-                <input type="checkbox" className="input-ckeckbox" />
+                50% and above
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  checked={discount === 50}
+                  value="50"
+                  onChange={(e) =>
+                    dispatch({ type: "DISCOUNT", value: e.target.value })
+                  }
+                />
               </span>
             </li>
             {/* <li className="list-divider"></li> */}
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
-                3 star & above
-                <input type="checkbox" className="input-ckeckbox" />
+                40% and above
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  checked={discount === 40}
+                  value="40"
+                  onChange={(e) =>
+                    dispatch({ type: "DISCOUNT", value: e.target.value })
+                  }
+                />
               </span>
             </li>
 
             {/* <li className="list-divider"></li> */}
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
-                2 star & above
-                <input type="checkbox" className="input-ckeckbox" />
+                30% and above
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  checked={discount === 30}
+                  value="30"
+                  onChange={(e) =>
+                    dispatch({ type: "DISCOUNT", value: e.target.value })
+                  }
+                />
               </span>
             </li>
 
             <li className="list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
-                1 star & above
-                <input type="checkbox" className="input-ckeckbox" />
+                20% and above
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  checked={discount === 20}
+                  value="20"
+                  onChange={(e) =>
+                    dispatch({ type: "DISCOUNT", value: e.target.value })
+                  }
+                />
+              </span>
+            </li>
+
+            <li className="list-items ">
+              <span className="list-with-icons checkbox h6 color capitalize fW-400">
+                10% and above
+                <input
+                  type="checkbox"
+                  className="input-ckeckbox"
+                  checked={discount === 10}
+                  value="10"
+                  onChange={(e) =>
+                    dispatch({ type: "DISCOUNT", value: e.target.value })
+                  }
+                />
               </span>
             </li>
           </ul>

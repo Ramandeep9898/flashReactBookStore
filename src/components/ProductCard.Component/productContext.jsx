@@ -3,10 +3,14 @@ import { sortReducerFunc } from "../Aside.component/sortReducerFunc";
 const ProductContext = createContext();
 const initialState = {
   sortBy: "",
+  categories: {
+    bestseller: false,
+    fiction: false,
+    nonfiction: false,
+    horror: false,
+  },
+  discount: "",
 };
-// categories: { clothing: false, wallart: false },
-// price: 5000,
-// discount: "",
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(sortReducerFunc, initialState);
   return (

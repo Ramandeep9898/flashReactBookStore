@@ -3,20 +3,32 @@ import "./productCard.css";
 import { useData } from "../../customHooks/useData";
 import getSortedProducts from "../Aside.component/getSortedProducts";
 import { useProduct } from "./productContext";
-
+import { getDiscountedProducts } from "./getDiscountedProducts";
+import { getFliteredProducts } from "./getFliteredProducts";
 const Products = () => {
   const { state } = useProduct();
   const { productData, categoryData } = useData();
-  const sortProducts = productData
-    ? getSortedProducts(productData, state.sortBy)
-    : [];
-  console.log(sortProducts);
+  console.log(state);
+  const categoryProducts = getFliteredProducts(
+    productData,
+    state.categories.bestseller,
+    state.categories.fiction,
+    state.categories.nonfiction,
+    state.categories.horror
+  );
+
+  const discountedProducts = getDiscountedProducts(
+    categoryProducts,
+    state.discount
+  );
+
+  const sortProducts = getSortedProducts(discountedProducts, state.sortBy);
 
   return (
     <main className="product-page-main">
       <div className="product-page-main-heading mgT-20">
         <p className="h5 color capitalize fW-600">showing the products</p>
-        <span className="h6">(showing 20 products)</span>
+        <span className="h6">(showing {sortProducts.length} products)</span>
       </div>
       <div className="product-cards">
         {sortProducts.length &&

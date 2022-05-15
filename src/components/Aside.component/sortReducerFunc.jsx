@@ -6,10 +6,53 @@ export const sortReducerFunc = (state, action) => {
         ...state,
         sortBy: action.type,
       };
+
     case "HIGH_TO_LOW":
       return {
         ...state,
         sortBy: action.type,
+      };
+
+    case "DISCOUNT":
+      return {
+        ...state,
+        discount: parseInt(action.value),
+      };
+
+    case "BESTSELLER":
+      return {
+        ...state,
+        categories: {
+          ...state["categories"],
+          bestseller: !state.categories.bestseller,
+        },
+      };
+
+    case "FICTION":
+      return {
+        ...state,
+        categories: {
+          ...state["categories"],
+          fiction: !state.categories.fiction,
+        },
+      };
+
+    case "NONFICTION":
+      return {
+        ...state,
+        categories: {
+          ...state["categories"],
+          nonfiction: !state.categories.nonfiction,
+        },
+      };
+
+    case "HORROR":
+      return {
+        ...state,
+        categories: {
+          ...state["categories"],
+          horror: !state.categories.horror,
+        },
       };
   }
 };
