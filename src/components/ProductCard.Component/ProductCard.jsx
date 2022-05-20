@@ -1,10 +1,12 @@
 import react from "react";
 import "./productCard.css";
 import { useData } from "../../customHooks/useData";
-import getSortedProducts from "../Aside.component/getSortedProducts";
 import { useProduct } from "./productContext";
-import { getDiscountedProducts } from "./getDiscountedProducts";
-import { getFliteredProducts } from "./getFliteredProducts";
+
+import getSortedProducts from "../Aside.component/fliters/getSortedProducts";
+import { getDiscountedProducts } from "../Aside.component/fliters/getDiscountedProducts";
+import { getFliteredProducts } from "../Aside.component/fliters/getFlitedproducts";
+
 const Products = () => {
   const { state } = useProduct();
   const { productData, categoryData } = useData();
@@ -31,39 +33,50 @@ const Products = () => {
         <span className="h6">(showing {sortProducts.length} products)</span>
       </div>
       <div className="product-cards">
-        {sortProducts.length &&
+        {sortProducts &&
           sortProducts.map(
             ({
               _id,
               title,
-              subTitle,
               img,
               originalPrice,
               discountedPrice,
               author,
               rating,
-              categoryName,
+              cover,
+              discount,
             }) => (
-              <div key={_id} className="product-cards">
-                <div className="card-basic">
-                  <button className="Floating-btn postion ">
-                    <i className="far fa-heart fa-lg"></i>
-                  </button>
-                  <img src={img} alt="" className="avatar sq-avatar card-img" />
-                  <div className="card-typo">
-                    <div className="card capitalize fW-400 color text-left mgT-8">
-                      {title}
-                    </div>
-                    <div className=" card-subtitle capitalize fW-400 color text-left mgT-4">
-                      {subTitle}
-                    </div>
-                    <div className="card capitalize fW-500 color text-left mgT-8">
-                      &#8377;{discountedPrice}
-                    </div>
-                    <button className="btn solid-pri-btn width100 mg-top8">
-                      add to cart
-                    </button>
+              <div key={_id} className="card-basic">
+                <button className="Floating-btn postion">
+                  <i className="far fa-heart fa-lg"></i>
+                </button>
+                <img src={img} alt="" className="avatar sq-avatar card-img" />
+                <div className="card-typo">
+                  <div className="card capitalize fW-400 color text-left">
+                    {title}
                   </div>
+                  <div className="card-subtitle capitalize fW-400 color text-left mgT-4">
+                    -by {author}
+                  </div>
+                  <div className="card capitalize fW-500 color text-left mgT-4">
+                    <div className="rating-div">
+                      <span className="rating">{rating}&#9733;</span>
+                      <span className="cover">( {cover} )</span>
+                    </div>
+
+                    <div className="mgT-4">
+                      &#8377;{discountedPrice}
+                      <span className="original-price">
+                        {" "}
+                        &#8377;{originalPrice}
+                      </span>
+                      &nbsp;
+                      <span className="discount">{discount}%</span>
+                    </div>
+                  </div>
+                  <button className="btn solid-pri-btn width100 mg-top8">
+                    add to cart
+                  </button>
                 </div>
               </div>
             )

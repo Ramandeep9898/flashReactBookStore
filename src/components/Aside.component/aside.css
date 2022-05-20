@@ -58,3 +58,10 @@
   align-items: center;
   gap: 10px;
 }
+/* clear all btn */
+.clear-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}

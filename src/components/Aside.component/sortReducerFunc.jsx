@@ -54,5 +54,16 @@ export const sortReducerFunc = (state, action) => {
           horror: !state.categories.horror,
         },
       };
+    case "CLEAR":
+      return {
+        sortBy: "",
+        categories: {
+          bestseller: false,
+          fiction: false,
+          nonfiction: false,
+          horror: false,
+        },
+        discount: "",
+      };
   }
 };

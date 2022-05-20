@@ -13,12 +13,19 @@ const Aside = () => {
       <section className="aside-sec mgT-20">
         <div className="aside-sec-heading dis-f f-space-btw">
           <p className="h5 color capitalize fW-600">fliters</p>
-          <a href="#">
-            <p className="h5 color capitalize fW-400">clear</p>
-          </a>
+
+          {/* clear button  */}
+          <button className="clear-btn">
+            <p
+              className="h6 color capitalize fW-400"
+              onClick={() => dispatch({ type: "CLEAR" })}
+            >
+              clear all
+            </p>
+          </button>
         </div>
-        <div className="aside-sec-heading mgT-40">
-          <datalist id="tickmarks">
+        <div className="aside-sec-heading mgT-20">
+          {/* <datalist id="tickmarks">
             <p className="h5 color capitalize fW-600">price</p>
             <option value="1000" label="1k"></option>
             <option value="2000" label="2k"></option>
@@ -33,12 +40,11 @@ const Aside = () => {
             step="1000"
             min="1000"
             max="5000"
-          />
+          /> */}
         </div>
-        {/* <li className="list-divider"></li> */}
 
         {/* categories */}
-        <div className="aside-sec-heading mgT-40">
+        <div className="aside-sec-heading ">
           <p className="h5 color capitalize fW-600">categories</p>
 
           <ul className="list">
@@ -104,8 +110,9 @@ const Aside = () => {
             </li>
           </ul>
         </div>
+
         {/* Discount */}
-        <div className="aside-sec-heading mgT-40">
+        <div className="aside-sec-heading ">
           <p className="h5 color capitalize fW-600">discount</p>
 
           <ul className="list ">
@@ -186,8 +193,9 @@ const Aside = () => {
             </li>
           </ul>
         </div>
+
         {/* sort by */}
-        <div className="aside-sec-heading mgT-40">
+        <div className="aside-sec-heading ">
           <p className="h5 color capitalize fW-600">sort by</p>
 
           <ul className="list ">
