@@ -1,6 +1,6 @@
 import "./App.css";
 import "./style/style.css";
-// import Header  from "./components/Header.component/Header.jsx";
+// import Header from "./components/Header.component/Header.jsx";
 import Home from "./pages/Home";
 import ProductListingMain from "./components/ProductListMain.component/ProductListMain";
 // import Aside from "./components/Aside.component/Aside";
@@ -17,8 +17,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<ProductListingMain />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/productListingPage" element={<ProductListingMain />} />
         {/* <Route path="/" element={<Aside />} /> */}
         {/* <Route path="/" element={<ProductCard />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
