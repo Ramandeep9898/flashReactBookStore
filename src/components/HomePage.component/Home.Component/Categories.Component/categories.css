@@ -5,7 +5,7 @@
 }
 
 .categories-card-container {
-  padding: 50px 0px;
+  padding: 50px 0px 130px 0;
   display: flex;
   justify-content: center;
   gap: 50px;
