@@ -1,0 +1,45 @@
+.categories > p {
+  color: #4b336d;
+  /* color: #f59e0b33; */
+  font-weight: 500;
+}
+
+.categories-card-container {
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.categories-card-img {
+  width: 250px;
+  height: 200px;
+  padding: 30px;
+  object-fit: cover;
+  border: 1.5px solid rgb(219, 219, 219);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(247, 242, 242, 0.2);
+}
+.SVG {
+  width: 100%;
+  height: 100%;
+}
+.categories-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.categories-card > span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-text);
+  cursor: pointer;
+}
+.categories-card-img :hover {
+  transform: scale(1.04);
+}
