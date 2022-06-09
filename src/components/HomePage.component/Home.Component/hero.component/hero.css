@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  padding: 50px 70px;
+  justify-content: space-around;
+}
+.main-first-half {
+  max-width: 50%;
+  display: flex;
+}
+.hero-SVG {
+  display: flex;
+}
+.aside-main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aside-main-section > p {
+  font-size: 4rem;
+  color: #4b336d;
+}

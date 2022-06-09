@@ -1,57 +1,69 @@
-.search-btn > input{
-    border-radius: 8px;
-    border-color: var(--sec-light-purple);
-    outline: none;
-    padding: 8px 1rem 8px 4rem;
-    
+.search-btn > input {
+  border-radius: 8px;
+  border-color: var(--sec-light-purple);
+  outline: none;
+  padding: 8px 1rem 8px 4rem;
 }
-.search-btn{
-    position: relative;
+.search-btn {
+  position: relative;
 }
-.postion-abso{
-    position: absolute;
+.postion-abso {
+  position: absolute;
 }
-.navbar-icons{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.navbar-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.navbar-icons>span{
-    padding: 3px;
-    cursor: pointer;
+.navbar-icons > span {
+  padding: 3px;
+  cursor: pointer;
 }
+
 /* CL  */
-.navigation{
-    /* width: 100%; */
-    min-width: 300px;
-    border-radius: 0px;
-    display: flex;
-    flex-direction: row;
-    text-transform: capitalize;
-    font-weight: 500;
-    background-color: var(--lightmode-bg-color);
-    color: var(--sec-dark-purple);
-    padding: 20px 70px;
-    justify-content: space-between;
+.navigation {
+  /* width: 100%; */
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 8px 29px -8px rgba(168, 168, 168, 0.42);
+  /* min-width: 300px; */
+  border-radius: 0px;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  text-transform: capitalize;
+  font-weight: 500;
+  background-color: var(--lightmode-bg-color);
+  color: var(--sec-dark-purple);
+  padding: 10px 70px;
+  justify-content: space-between;
 }
-.nav-container-startsec{
-    display: flex;
-    align-items: center;
+.nav-container-startsec {
+  display: flex;
+  align-items: center;
 }
-.nav-container-startsec > i{
-    margin-right: 2rem;
-    color: var(--sec-dark-purple);
-    cursor: pointer;
+.nav-container-startsec > i {
+  margin-right: 2rem;
+  color: var(--sec-dark-purple);
+  cursor: pointer;
 }
-.nav-title{
-    font-weight: 500;
+.nav-title {
+  font-weight: 500;
 }
-.nav-container-endsec{
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
+.nav-container-endsec {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
-.nav-container-endsec> i{
-    cursor: pointer;
+.nav-container-endsec > i {
+  cursor: pointer;
+}
+.size {
+  width: 20px;
+  height: 24px;
+}
+.search-btn > input {
+  padding: 11px 1rem 8px 4rem;
 }
