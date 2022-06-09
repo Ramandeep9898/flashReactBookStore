@@ -2,6 +2,7 @@ import react from "react";
 // import mainBackGround from "./hero-bg.jpg";
 import mainSVG from "./taxi-librarian.png";
 import "./hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -18,9 +19,9 @@ const Hero = () => {
               quod fugiat officiis?
             </span>
             <div className="mgT-20">
-              <a href="#">
+              <Link to="/productListingPage">
                 <button className="btn solid-pri-btn">shop now</button>
-              </a>
+              </Link>
             </div>
           </div>
         </main>
