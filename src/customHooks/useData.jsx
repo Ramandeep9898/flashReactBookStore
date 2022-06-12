@@ -7,14 +7,14 @@ export const useData = () => {
 
   useEffect(() => {
     (async () => {
-      const responseProduct = await axios.get("api/products");
+      const responseProduct = await axios.get("/api/products");
       setProductData(responseProduct.data.products);
     })();
   }, []);
 
   useEffect(() => {
     (async () => {
-      const responseCategory = await axios.get("api/categories");
+      const responseCategory = await axios.get("/api/categories");
       setCategoryData(responseCategory);
     })();
   }, []);
