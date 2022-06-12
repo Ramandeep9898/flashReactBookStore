@@ -2,6 +2,7 @@ import react from "react";
 import "./productCard.css";
 import { useData } from "../../customHooks/useData";
 import { useProduct } from "./productContext";
+import { Link } from "react-router-dom";
 
 import getSortedProducts from "../Aside.component/fliters/getSortedProducts";
 import { getDiscountedProducts } from "../Aside.component/fliters/getDiscountedProducts";
@@ -10,7 +11,7 @@ import { getFliteredProducts } from "../Aside.component/fliters/getFlitedproduct
 const Products = () => {
   const { state } = useProduct();
   const { productData, categoryData } = useData();
-  console.log(state);
+  // console.log(productData);
   const categoryProducts = getFliteredProducts(
     productData,
     state.categories.bestseller,
@@ -52,9 +53,11 @@ const Products = () => {
                 </button>
                 <img src={img} alt="" className="avatar sq-avatar card-img" />
                 <div className="card-typo">
-                  <div className="card capitalize fW-400 color text-left">
-                    {title}
-                  </div>
+                  <Link to={`/productListingPage/${_id}`}>
+                    <div className="card capitalize fW-400 color text-left">
+                      {title}
+                    </div>
+                  </Link>
                   <div className="card-subtitle capitalize fW-400 color text-left mgT-4">
                     -by {author}
                   </div>
