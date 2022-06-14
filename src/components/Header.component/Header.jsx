@@ -44,7 +44,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link to="/login">
+          <Link to="/wishlist">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
                 <AiOutlineHeart size="lg" />
@@ -54,7 +54,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link to="/login">
+          <Link to="/cart">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
                 <AiOutlineShopping size="lg" />
