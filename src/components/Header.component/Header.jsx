@@ -35,10 +35,12 @@ const Header = () => {
         <section className="nav-container-endsec">
           <Link to="/login">
             <div className="badge-on-avatar navbar-icons">
-              <div className="size">
-                <CgProfile size="lg" />
-              </div>
-              <span>login</span>
+              <Link to="/login">
+                <div className="size">
+                  <CgProfile size="lg" />
+                </div>
+                <span>login</span>
+              </Link>
             </div>
           </Link>
 
