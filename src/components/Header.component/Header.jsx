@@ -35,14 +35,16 @@ const Header = () => {
         <section className="nav-container-endsec">
           <Link to="/login">
             <div className="badge-on-avatar navbar-icons">
-              <div className="size">
-                <CgProfile size="lg" />
-              </div>
-              <span>login</span>
+              <Link to="/login">
+                <div className="size">
+                  <CgProfile size="lg" />
+                </div>
+                <span>login</span>
+              </Link>
             </div>
           </Link>
 
-          <Link to="/login">
+          <Link to="/wishlist">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
                 <AiOutlineHeart size="lg" />
@@ -52,7 +54,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link to="/login">
+          <Link to="/cart">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
                 <AiOutlineShopping size="lg" />

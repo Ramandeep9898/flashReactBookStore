@@ -1,18 +1,14 @@
 import "./App.css";
 import "./style/style.css";
-// import Header from "./components/Header.component/Header.jsx";
 import Home from "./pages/Home";
 import ProductListingMain from "./components/ProductListMain.component/ProductListMain";
 import ProductDetailMain from "./components/ProductCard.Component/ProductDetailsMain.Component/ProductDetailMain";
-// import Aside from "./components/Aside.component/Aside";
-// import ProductCard from "./components/ProductCard.Component/ProductCard";
-// import Login from "./pages/Login";
-// import ProductListing from "./pages/ProductListing";
-// import { SignUp } from "./pages/SignUp";
-// import Cart from "./pages/Cart";
-// import Wishlist from "./pages/Wishlist";
+import LoginMain from "./pages/LoginMain";
+import SignupMain from "./pages/SignupMain";
+import Wishlist from "./pages/Wishlist";
+import Cart from "./pages/Cart";
 import { Routes, Route } from "react-router-dom";
-import MockmanEs from "mockman-js";
+// import MockmanEs from "mockman-js";
 
 function App() {
   return (
@@ -24,14 +20,10 @@ function App() {
           path="/productListingPage/:productID"
           element={<ProductDetailMain />}
         />
-        {/* <Route path="/" element={<Aside />} /> */}
-        {/* <Route path="/" element={<ProductCard />} /> */}
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/signup" element={<SignUp />} /> */}
-        {/* <Route path="/cart" element={<Cart />} /> */}
-        {/* <Route path="/products" element={<ProductListing />} /> */}
-        {/* <Route path="/wishlist" element={<Wishlist />} /> */}
-        {/* <Route path="/mockman" element={<MockmanEs />} /> */}
+        <Route path="/login" element={<LoginMain />} />
+        <Route path="/signup" element={<SignupMain />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
