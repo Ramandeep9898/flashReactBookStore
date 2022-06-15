@@ -39,28 +39,27 @@ const Header = () => {
                 <div className="size">
                   <CgProfile size="lg" />
                 </div>
-                <span>login</span>
               </Link>
             </div>
           </Link>
 
+          {/* link to wishlist */}
           <Link to="/wishlist">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
                 <AiOutlineHeart size="lg" />
                 <span className="badge-count">2</span>
               </div>
-              <span>favourities</span>
             </div>
           </Link>
 
+          {/* link to cart */}
           <Link to="/cart">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
                 <AiOutlineShopping size="lg" />
                 <span className="badge-count">2</span>
               </div>
-              <span>cart</span>
             </div>
           </Link>
         </section>

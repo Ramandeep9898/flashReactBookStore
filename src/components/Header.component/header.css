@@ -55,7 +55,7 @@
 .nav-container-endsec {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 3rem;
 }
 .nav-container-endsec > i {
   cursor: pointer;
