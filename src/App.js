@@ -6,7 +6,7 @@ import ProductDetailMain from "./components/ProductCard.Component/ProductDetails
 import LoginMain from "./pages/LoginMain";
 import SignupMain from "./pages/SignupMain";
 import Wishlist from "./pages/Wishlist";
-import Cart from "./pages/Cart";
+import Cart from "./pages/CartMain";
 import { Routes, Route } from "react-router-dom";
 // import MockmanEs from "mockman-js";
 

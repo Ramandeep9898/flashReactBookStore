@@ -5,7 +5,6 @@ export const getFliteredProducts = (
   nonfiction,
   horror
 ) => {
-  console.log(sortedproducts);
   const filteredlist = [];
   if (
     bestseller === false &&

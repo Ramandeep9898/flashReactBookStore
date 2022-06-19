@@ -1,0 +1,6 @@
+.cart-page-main {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f7f7f7;
+  padding: 50px;
+}

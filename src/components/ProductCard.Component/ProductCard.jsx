@@ -1,17 +1,24 @@
 import react from "react";
 import "./productCard.css";
-import { useData } from "../../customHooks/useData";
-import { useProduct } from "./productContext";
 import { Link } from "react-router-dom";
 
+// hooks
+import { useData } from "../../customHooks/useData";
+
+// context
+import { useProduct } from "./productContext";
+
+// fliters
 import getSortedProducts from "../Aside.component/fliters/getSortedProducts";
 import { getDiscountedProducts } from "../Aside.component/fliters/getDiscountedProducts";
 import { getFliteredProducts } from "../Aside.component/fliters/getFlitedproducts";
 
+import { addCartWishList } from "../../utils/cart/addCartWhishlist";
+import ProductCard from "./Products";
+
 const Products = () => {
   const { state } = useProduct();
   const { productData, categoryData } = useData();
-  // console.log(productData);
   const categoryProducts = getFliteredProducts(
     productData,
     state.categories.bestseller,
@@ -26,7 +33,6 @@ const Products = () => {
   );
 
   const sortProducts = getSortedProducts(discountedProducts, state.sortBy);
-
   return (
     <main className="product-page-main">
       <div className="product-page-main-heading mgT-20">
@@ -35,55 +41,26 @@ const Products = () => {
       </div>
       <div className="product-cards">
         {sortProducts &&
-          sortProducts.map(
-            ({
-              _id,
-              title,
-              img,
-              originalPrice,
-              discountedPrice,
-              author,
-              rating,
-              cover,
-              discount,
-            }) => (
-              <div key={_id} className="card-basic">
-                <button className="Floating-btn postion">
-                  <i className="far fa-heart fa-lg"></i>
-                </button>
-                <img src={img} alt="" className="avatar sq-avatar card-img" />
-                <div className="card-typo">
-                  <Link to={`/productListingPage/${_id}`}>
-                    <div className="card capitalize fW-400 color text-left">
-                      {title}
-                    </div>
-                  </Link>
-                  <div className="card-subtitle capitalize fW-400 color text-left mgT-4">
-                    -by {author}
-                  </div>
-                  <div className="card capitalize fW-500 color text-left mgT-4">
-                    <div className="rating-div">
-                      <span className="rating">{rating}&#9733;</span>
-                      <span className="cover">( {cover} )</span>
-                    </div>
-
-                    <div className="mgT-4">
-                      &#8377;{discountedPrice}
-                      <span className="original-price">
-                        {" "}
-                        &#8377;{originalPrice}
-                      </span>
-                      &nbsp;
-                      <span className="discount">{discount}%</span>
-                    </div>
-                  </div>
-                  <button className="btn solid-pri-btn width100 mg-top8">
-                    add to cart
-                  </button>
-                </div>
-              </div>
-            )
-          )}
+          sortProducts.map((product) => {
+            let productCardData = {
+              _id: product._id,
+              title: product.title,
+              img: product.img,
+              originalPrice: product.originalPrice,
+              author: product.author,
+              author: product.author,
+              cover: product.cover,
+              discount: product.discount,
+            };
+            return (
+              <ProductCard
+                key={product._id}
+                productCardData={productCardData}
+                product={product}
+                addCartWishList={addCartWishList}
+              />
+            );
+          })}
       </div>
     </main>
   );

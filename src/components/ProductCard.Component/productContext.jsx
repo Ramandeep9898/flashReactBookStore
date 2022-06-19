@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { sortReducerFunc } from "../Aside.component/sortReducerFunc";
+
 const ProductContext = createContext();
 const initialState = {
   sortBy: "",
