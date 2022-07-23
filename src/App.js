@@ -5,14 +5,17 @@ import ProductListingMain from "./components/ProductListMain.component/ProductLi
 import ProductDetailMain from "./components/ProductCard.Component/ProductDetailsMain.Component/ProductDetailMain";
 import LoginMain from "./pages/LoginMain";
 import SignupMain from "./pages/SignupMain";
-import Wishlist from "./pages/Wishlist";
+import WishlistMain from "./pages/Wishlist";
+import Header from "./components/Header.component/Header";
 import Cart from "./pages/CartMain";
+// import LoginMain from "./pages/LoginMain";
 import { Routes, Route } from "react-router-dom";
 // import MockmanEs from "mockman-js";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productListingPage" element={<ProductListingMain />} />
@@ -22,8 +25,9 @@ function App() {
         />
         <Route path="/login" element={<LoginMain />} />
         <Route path="/signup" element={<SignupMain />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/wishlist" element={<WishlistMain />} />
         <Route path="/cart" element={<Cart />} />
+        {/* <Route path="/login" element={<LoginMain />} /> */}
       </Routes>
     </div>
   );

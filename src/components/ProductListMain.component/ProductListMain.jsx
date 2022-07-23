@@ -3,14 +3,15 @@ import Aside from "../Aside.component/Aside";
 import ProductCard from "../ProductCard.Component/ProductCard";
 import Header from "../Header.component/Header";
 import "./product-list-main.css";
+import Products from "../ProductCard.Component/Products";
 
 const ProductListingMain = () => {
   return (
     <main className="product-page">
-      <Header />
+      {/* <Header /> */}
       <div className="product-list-main">
         <Aside />
-        <ProductCard />
+        <Products />
       </div>
     </main>
   );

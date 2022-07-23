@@ -8,7 +8,7 @@ const Signup = () => {
       <main className="login-main">
         <div className="login-container">
           <div className="login-body">
-            <p className="h3 color capitalize fW-700 text-center">login</p>
+            <p className="h3 color capitalize fW-700 text-center">sign up</p>
             <div className="input-box mgT-20">
               <label for="email" className="textarea-label">
                 email
@@ -82,7 +82,9 @@ const Signup = () => {
                 </label>
               </div>
             </div>
-            <button className="btn solid-pri-btn width100 mgT-20">login</button>
+            <button className="btn solid-pri-btn width100 mgT-20">
+              sign up
+            </button>
             <Link to="/login">
               <p className="h5 color capitalize fW-500 text-center mgT-20">
                 already have a account{" "}

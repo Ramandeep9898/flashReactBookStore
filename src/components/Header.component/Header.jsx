@@ -35,11 +35,9 @@ const Header = () => {
         <section className="nav-container-endsec">
           <Link to="/login">
             <div className="badge-on-avatar navbar-icons">
-              <Link to="/login">
-                <div className="size">
-                  <CgProfile size="lg" />
-                </div>
-              </Link>
+              <div className="size">
+                <CgProfile size="lg" />
+              </div>
             </div>
           </Link>
 

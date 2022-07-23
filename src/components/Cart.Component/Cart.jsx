@@ -14,30 +14,25 @@ const getCartWishlistLocalStorage = (cartWishlistState) => {
 
 const Cart = () => {
   const { cartWishlistState } = useCartWishlistContext();
-  console.log(cartWishlistState);
-  // const userCartWishlistData = getCartWishlistLocalStorage(cartWishlistState);
+
   const cartItems = getCartWishlistItems(cartWishlistState, "cart");
 
   return (
     <>
       <Header />
-
       {cartItems.length !== 0 ? (
         <div class="cart-page-main">
-          {cartItems.map((cartItem) => (
-            <CartProductCard product={cartItem.item} cartItems={cartItems} />
-          ))}
+          <div className="cart-product-cart">
+            {cartItems.map((cartItem) => (
+              <CartProductCard product={cartItem.item} cartItems={cartItems} />
+            ))}
+          </div>
 
           <OrderSummaryCard />
         </div>
       ) : (
         <div>No Items In The Cart</div>
       )}
-
-      {/* <div className="cart-page-main">
-        <CartProductCard />
-        <OrderSummaryCard />
-      </div> */}
     </>
   );
 };

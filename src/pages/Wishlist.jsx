@@ -1,11 +1,12 @@
 import react from "react";
+import Wishlist from "../components/Wishlist.Compoment/Whishlist";
 
-const Wishlist = () => {
+const WishlistMain = () => {
   return (
     <>
-      <h1>Wishlist</h1>
+      <Wishlist />
     </>
   );
 };
 
-export default Wishlist;
+export default WishlistMain;

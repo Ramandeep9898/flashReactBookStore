@@ -4,3 +4,8 @@
   background-color: #f7f7f7;
   padding: 50px;
 }
+.cart-product-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
