@@ -5,7 +5,7 @@ import Header from "../components/Header.component/Header";
 const SignupMain = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Signup />
     </>
   );

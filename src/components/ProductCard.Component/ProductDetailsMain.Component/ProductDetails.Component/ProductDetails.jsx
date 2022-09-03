@@ -35,7 +35,7 @@ const ProductDetails = ({
             <span className="discount h5"> {discount}%Off </span>
           </div>
           <button className="btn solid-pri-btn width80 mgT-16">
-            add to bag
+            add to cart
           </button>
           <button className="btn btn-pri-outlined width80 mgT-16">
             favourite &#10084;

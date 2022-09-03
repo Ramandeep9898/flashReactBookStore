@@ -6,31 +6,18 @@
   color: var(--sec-dark-purple);
 }
 .product-page {
-  display: grid;
   width: 100vw;
   height: 100vh;
-
-  grid-template-areas:
-    "aside main main"
-    "aside main main"
-    "aside main main"
-    "footer footer footer";
 }
 
 .product-page-aside {
   background-color: var(--lightmode-bg-color);
-  grid-area: aside;
-  width: 20vw;
-  grid-column: 1/2;
-  grid-row: 2/4;
+  width: 20%;
 }
 .product-page-main {
   background-color: #f7f7f7;
-  grid-area: main;
-  width: 80vw;
-  grid-column: 2/4;
-  grid-row: 2/4;
   padding: 0 50px;
+  width: 80%;
 }
 .dis-f {
   display: flex;
