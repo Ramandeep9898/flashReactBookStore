@@ -9,8 +9,7 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    svg: "",
   },
   {
     _id: uuid(),
@@ -22,18 +21,18 @@ export const categories = [
     _id: uuid(),
     categoryName: "horror",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",    
+      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
   },
   {
     _id: uuid(),
     categoryName: "self-help",
     description:
-      "A self-help book is one that is written with the intention to instruct its readers on solving personal problems"
+      "A self-help book is one that is written with the intention to instruct its readers on solving personal problems",
   },
   {
     _id: uuid(),
     categoryName: "crime-thriller",
     description:
-      "A self-help book is one that is written with the intention to instruct its readers on solving personal problems"
+      "A self-help book is one that is written with the intention to instruct its readers on solving personal problems",
   },
 ];

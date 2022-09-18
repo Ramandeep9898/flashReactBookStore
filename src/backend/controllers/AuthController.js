@@ -1,10 +1,13 @@
 import { v4 as uuid } from "uuid";
 import { Response } from "miragejs";
 import { formatDate } from "../utils/authUtils";
-const sign = require("jwt-encode");
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
 /**
  * All the routes related to Auth are present here.
  * These are Publicly accessible routes.
+ *
  * */
 
 /**
@@ -28,10 +31,11 @@ export const signupHandler = function (schema, request) {
       );
     }
     const _id = uuid();
+    const encryptedPassword = bcrypt.hashSync(password, 5);
     const newUser = {
       _id,
       email,
-      password,
+      password: encryptedPassword,
       createdAt: formatDate(),
       updatedAt: formatDate(),
       ...rest,
@@ -39,7 +43,10 @@ export const signupHandler = function (schema, request) {
       wishlist: [],
     };
     const createdUser = schema.users.create(newUser);
-    const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
+    const encodedToken = jwt.sign(
+      { _id, email },
+      process.env.REACT_APP_JWT_SECRET
+    );
     return new Response(201, {}, { createdUser, encodedToken });
   } catch (error) {
     return new Response(
@@ -70,12 +77,19 @@ export const loginHandler = function (schema, request) {
       );
     }
     if (password === foundUser.password) {
-      const encodedToken = sign(
+      const encodedToken = jwt.sign(
         { _id: foundUser._id, email },
         process.env.REACT_APP_JWT_SECRET
       );
       foundUser.password = undefined;
-      return new Response(200, {}, { foundUser, encodedToken });
+      return new Response(
+        200,
+        {},
+        {
+          foundUser,
+          encodedToken,
+        }
+      );
     }
     return new Response(
       401,
@@ -85,6 +99,43 @@ export const loginHandler = function (schema, request) {
           "The credentials you entered are invalid. Unauthorized access error.",
         ],
       }
+    );
+  } catch (error) {
+    console.log(error.message);
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};
+
+/**
+ * This handler handles user verification.
+ * send POST Request at /api/auth/verify
+ * body contains {encodedToken}
+ * */
+
+export const verifyUser = function (schema, request) {
+  console.log("jdchjs");
+  const { encodedToken } = JSON.parse(request.requestBody);
+  const decodedToken = jwt.verify(
+    encodedToken,
+    process.env.REACT_APP_JWT_SECRET
+  );
+  try {
+    if (decodedToken) {
+      const user = this.db.users.findBy({ email: decodedToken.email });
+      if (user) {
+        return new Response(200, {}, { user });
+      }
+    }
+    return new Response(
+      401,
+      {},
+      { errors: ["The token is invalid. Unauthorized access error."] }
     );
   } catch (error) {
     return new Response(

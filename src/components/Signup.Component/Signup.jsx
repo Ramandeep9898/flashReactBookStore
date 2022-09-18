@@ -1,14 +1,31 @@
-import React from "react";
-import "./signup.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../customHooks/useAuth";
 
-const Signup = () => {
+const SignUp = ({ setAuthVal }) => {
+  const { signUpAuth } = useAuth();
+  const [signUpDetails, setSignUpDetails] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  const [errorMessage, setErrorMessage] = useState({
+    message: "",
+  });
+
+  const signUpHandler = (signUpDetails) => {
+    console.log("signup details", signUpDetails);
+    signUpAuth(signUpDetails);
+  };
+
+  console.log(signUpDetails);
   return (
     <>
       <main className="login-main">
         <div className="login-container">
           <div className="login-body">
-            <p className="h3 color capitalize fW-700 text-center">login</p>
+            <p className="h3 color capitalize fW-700 text-center">sign up</p>
             <div className="input-box mgT-20">
               <label for="email" className="textarea-label">
                 email
@@ -19,6 +36,10 @@ const Signup = () => {
                 className="input"
                 placeholder="you@example.com"
                 valide
+                value={signUpDetails.email}
+                onChange={(e) => {
+                  setSignUpDetails({ ...signUpDetails, email: e.target.value });
+                }}
               />
             </div>
 
@@ -32,6 +53,13 @@ const Signup = () => {
                 className="input"
                 placeholder="First Name"
                 valide
+                value={signUpDetails.firstName}
+                onChange={(e) => {
+                  setSignUpDetails({
+                    ...signUpDetails,
+                    firstName: e.target.value,
+                  });
+                }}
               />
             </div>
 
@@ -45,6 +73,13 @@ const Signup = () => {
                 className="input"
                 placeholder="Last Name"
                 valide
+                value={signUpDetails.lastName}
+                onChange={(e) => {
+                  setSignUpDetails({
+                    ...signUpDetails,
+                    lastName: e.target.value,
+                  });
+                }}
               />
             </div>
 
@@ -58,19 +93,13 @@ const Signup = () => {
                 className="input"
                 placeholder="**********"
                 valide
-              />
-            </div>
-
-            <div className="input-box mgT-20">
-              <label for="confirm-password" className="textarea-label">
-                confirm password
-              </label>
-              <input
-                id="confirm-password"
-                type="password"
-                className="input"
-                placeholder="**********"
-                valide
+                value={signUpDetails.password}
+                onChange={(e) => {
+                  setSignUpDetails({
+                    ...signUpDetails,
+                    password: e.target.value,
+                  });
+                }}
               />
             </div>
 
@@ -82,12 +111,23 @@ const Signup = () => {
                 </label>
               </div>
             </div>
-            <button className="btn solid-pri-btn width100 mgT-20">login</button>
-            <Link to="/login">
-              <p className="h5 color capitalize fW-500 text-center mgT-20">
-                already have a account{" "}
-              </p>
-            </Link>
+            <button
+              className="btn solid-pri-btn width100 mgT-20"
+              onClick={() => {
+                signUpHandler(signUpDetails);
+              }}
+            >
+              sign up
+            </button>
+
+            <p
+              className="h5 color capitalize fW-500 text-center mgT-20"
+              onClick={() => {
+                setAuthVal(true);
+              }}
+            >
+              already have a account{" "}
+            </p>
           </div>
         </div>
       </main>
@@ -95,4 +135,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
