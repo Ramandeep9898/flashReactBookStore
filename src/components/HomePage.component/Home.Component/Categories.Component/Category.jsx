@@ -4,11 +4,29 @@ import fictionSVG from "./fictionSVG.svg";
 import horrorSVG from "./horrorSVG.svg";
 import nonFictionSVG from "./nonFictionSVG.svg";
 import selfHelpSVG from "./self-helpSVG.svg";
+import { useData } from "../../../../customHooks/useData";
 const Categories = () => {
+  const { categoryData } = useData();
+  console.log(categoryData);
   return (
     <>
       <section className="categories">
-        <p className="h1 capitalize text-center ">Trending categories</p>
+        <p className="h1 capitalize text-center heading-color-font">
+          Trending categories
+        </p>
+
+        {/* {categoryData.map((items) => (
+          <>
+            <div className="categories-card-container">
+              <div className="categories-card">
+                <div className="categories-card-img">
+                  <img src={items.svg} alt="" className="SVG" />
+                </div>
+                <span className="capitalize fW-500">fiction</span>
+              </div>
+            </div>
+          </>
+        ))} */}
 
         <div className="categories-card-container">
           <div className="categories-card">

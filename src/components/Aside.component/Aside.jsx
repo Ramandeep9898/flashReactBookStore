@@ -24,27 +24,9 @@ const Aside = () => {
             </p>
           </button>
         </div>
-        <div className="aside-sec-heading mgT-20">
-          {/* <datalist id="tickmarks">
-            <p className="h5 color capitalize fW-600">price</p>
-            <option value="1000" label="1k"></option>
-            <option value="2000" label="2k"></option>
-            <option value="3000" label="3k"></option>
-            <option value="4000" label="4k"></option>
-            <option value="5000" label="5k"></option>
-          </datalist>
-          <input
-            type="range"
-            name=""
-            className="slider"
-            step="1000"
-            min="1000"
-            max="5000"
-          /> */}
-        </div>
 
         {/* categories */}
-        <div className="aside-sec-heading ">
+        <div className="aside-sec-heading mgT-16">
           <p className="h5 color capitalize fW-600">categories</p>
 
           <ul className="list">

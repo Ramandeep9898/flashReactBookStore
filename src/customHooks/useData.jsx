@@ -15,7 +15,7 @@ export const useData = () => {
   useEffect(() => {
     (async () => {
       const responseCategory = await axios.get("/api/categories");
-      setCategoryData(responseCategory);
+      setCategoryData(responseCategory.data.categories);
     })();
   }, []);
   return { productData, categoryData };

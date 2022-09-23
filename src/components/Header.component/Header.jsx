@@ -1,13 +1,13 @@
 import react from "react";
 import "./header.css";
-import logo from "./lightning64px.png";
+import logo from "./flashHeaderLogo.svg";
 import { Link } from "react-router-dom";
 import {
   AiOutlineShopping,
   AiOutlineHeart,
-  AiOutlineSearch,
+  AiOutlineLogin,
 } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
+import { AuthIcon } from "./Header.icons/AuthIcon";
 
 const Header = () => {
   return (
@@ -15,31 +15,19 @@ const Header = () => {
       <nav className="navigation">
         <section className="nav-container-startsec">
           {/* link to homepage */}
-          <Link to="/">
-            <img src={logo} alt="logo" />
-          </Link>
+          {/* <Link to="/"> */}
+          {/* <img src={logo} alt="logo" /> */}
+          {/* </Link> */}
           <span className="nav-title">flashBookStore</span>
         </section>
 
-        {/* search btn  */}
-        <section className="nav-container-startsec nav-search">
-          <div className="search-btn">
-            <button className="btn solid-sec-btn postion-abso">
-              <AiOutlineSearch />
-            </button>
-            <input type="search" placeholder="Search..." />
-          </div>
-        </section>
-
-        {/* login */}
         <section className="nav-container-endsec">
-          <Link to="/login">
+          <Link to="/productListingPage">
             <div className="badge-on-avatar navbar-icons">
               <Link to="/login">
-                <div className="size">
-                  <CgProfile size="lg" />
-                </div>
-                <span>login</span>
+                <button className="btn cta-black-btn">
+                  login <AiOutlineLogin />
+                </button>
               </Link>
             </div>
           </Link>
@@ -47,22 +35,26 @@ const Header = () => {
           <Link to="/wishlist">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
-                <AiOutlineHeart size="lg" />
+                <AiOutlineHeart />
                 <span className="badge-count">2</span>
               </div>
-              <span>favourities</span>
             </div>
           </Link>
 
           <Link to="/cart">
             <div className="navbar-icons">
               <div className="size badge-on-avatar">
-                <AiOutlineShopping size="lg" />
+                <AiOutlineShopping />
                 <span className="badge-count">2</span>
               </div>
-              <span>cart</span>
             </div>
           </Link>
+
+          <div className="badge-on-avatar navbar-icons">
+            <div className="size">
+              <AuthIcon />
+            </div>
+          </div>
         </section>
       </nav>
     </header>

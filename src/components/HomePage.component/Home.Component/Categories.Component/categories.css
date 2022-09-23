@@ -1,7 +1,11 @@
+.categories {
+  margin-top: 60px;
+}
+
 .categories > p {
-  color: #4b336d;
   /* color: #f59e0b33; */
   font-weight: 500;
+  z-index: 10;
 }
 
 .categories-card-container {

@@ -2,6 +2,7 @@ import { Server, Model, RestSerializer } from "miragejs";
 import {
   loginHandler,
   signupHandler,
+  verifyUser,
 } from "./backend/controllers/AuthController";
 import {
   addItemToCartHandler,
@@ -13,6 +14,7 @@ import {
   getAllCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
+
 import {
   getAllProductsHandler,
   getProductHandler,
@@ -35,6 +37,7 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       product: Model,
       category: Model,
+      brand: Model,
       user: Model,
       cart: Model,
       wishlist: Model,
@@ -60,6 +63,7 @@ export function makeServer({ environment = "development" } = {}) {
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));
+      this.post("/auth/verify", verifyUser.bind(this));
 
       // products routes (public)
       this.get("/products", getAllProductsHandler.bind(this));
