@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Login from "../Login.Component/Login";
-import SignUp from "../Signup.Component/SignUp";
+import SignUp from "../Signup.Component/SignUp.jsx";
 
 export function Auth() {
   const [authVal, setAuthVal] = useState(true);
