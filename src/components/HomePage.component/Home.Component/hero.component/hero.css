@@ -23,7 +23,7 @@
   justify-content: center;
 }
 .aside-main-section > p {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "DM Serif Display", serif;
   font-size: 7rem;
   color: var(--heading-black);
   line-height: 1;
@@ -37,18 +37,20 @@
 }
 .btn {
   font-weight: 300;
-  /* font-size: 14px; */
 }
 .margin {
   margin-top: 30px;
 }
 .heading-color-font {
   color: var(--heading-black);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "DM Serif Display", serif;
 }
 .heading-color {
   color: var(--heading-black);
 }
 .heading-font {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "DM Serif Display", serif;
+}
+.aside-main-section > span {
+  max-width: 500px;
 }

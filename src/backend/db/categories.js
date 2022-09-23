@@ -1,4 +1,8 @@
 import { v4 as uuid } from "uuid";
+import fictionSVG from "../../assets/svgs/fictionSVG.svg";
+// import horrorSVG from "./horrorSVG.svg";
+// import nonFictionSVG from "./nonFictionSVG.svg";
+// import selfHelpSVG from "./self-helpSVG.svg";
 
 /**
  * Category Database can be added here.
@@ -9,7 +13,7 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "fiction",
-    svg: "",
+    svg: { fictionSVG },
   },
   {
     _id: uuid(),

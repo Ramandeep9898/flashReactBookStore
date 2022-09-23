@@ -1,10 +1,10 @@
 import "./App.css";
 import "./style/style.css";
+import Header from "./components/Header.component/Header";
+import Footer from "./components/HomePage.component/Home.Component/Footer.Component/Footer";
 import Home from "./pages/Home";
 import ProductListingMain from "./components/ProductListMain.component/ProductListMain";
 import ProductDetailMain from "./components/ProductCard.Component/ProductDetailsMain.Component/ProductDetailMain";
-import LoginMain from "./pages/LoginMain";
-import SignupMain from "./pages/SignupMain";
 import Wishlist from "./pages/Wishlist";
 import { Auth } from "./components/Auth.Component/Auth";
 import Cart from "./pages/Cart";
@@ -18,6 +18,7 @@ import User from "./components/Auth.Component/User";
 function App() {
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productListingPage" element={<ProductListingMain />} />
@@ -35,6 +36,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

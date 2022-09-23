@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
@@ -8,26 +8,6 @@ const AuthProvider = ({ children }) => {
   const flashToken = localStorage.getItem("flashToken");
   const [user, setUser] = useState();
   const [encodedToken, setEncodedToken] = useState();
-
-  //   useEffect(() => {
-  //     console.log("verify");
-  //     if (flashToken) {
-  //       (async function () {
-  //         setEncodedToken(flashToken);
-  //         try {
-  //           const response = await axios.post("/api/auth/verify", {
-  //             encodedToken: flashToken,
-  //           });
-  //           console.log(response);
-  //           if (response.status === 200) {
-  //             setUser(response.data.user);
-  //           }
-  //         } catch (error) {
-  //           console.log(error);
-  //         }
-  //       })();
-  //     }
-  //   }, []);
 
   const logInAuth = async (loginDetails) => {
     console.log(loginDetails);

@@ -12,10 +12,15 @@ const Hero = () => {
             <p className=" capitalize">
               Feel <br /> authentic <br /> Peace
             </p>
-            <div className="margin">
+            <span className=" capitalize mg-top8">
+              Browse & Discover Thousands of Books. Read Customer Reviews and
+              Find Best Sellers. Top Brand and Quality Books.
+            </span>
+            <div className="mg-top8">
               <Link to="/productListingPage">
-                <button className="btn cta-black-btn">
-                  shop now <BsArrowUpRight />
+                <button className="btn solid-pri-btn mg-top16">
+                  shop now
+                  <BsArrowUpRight />
                 </button>
               </Link>
             </div>

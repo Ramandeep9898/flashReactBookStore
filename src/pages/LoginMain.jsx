@@ -5,9 +5,7 @@ import Footer from "../components/HomePage.component/Home.Component/Footer.Compo
 const LoginMain = () => {
   return (
     <>
-      <Header />
       <Login />
-      {/* <Footer /> */}
     </>
   );
 };

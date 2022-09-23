@@ -40,7 +40,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "The 48 Laws Of Power ",
+    title: "The 48 Laws Of Power by Robert Greene",
     img: "https://images-na.ssl-images-amazon.com/images/I/41VCBqRMNML._SX351_BO1,204,203,200_.jpg",
     originalPrice: 1200,
     discountedPrice: 420,
@@ -64,7 +64,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "Mastery",
+    title: "Mastery book by Robert Greene",
     img: "https://images-na.ssl-images-amazon.com/images/I/41T1+apx5SL._SX325_BO1,204,203,200_.jpg",
     originalPrice: 699,
     discountedPrice: 467,
@@ -89,7 +89,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "The 48 Laws Of Power ",
+    title: "The 48 Laws Of Power by Robert Greene",
     img: "https://images-na.ssl-images-amazon.com/images/I/41VCBqRMNML._SX351_BO1,204,203,200_.jpg",
     originalPrice: 1200,
     discountedPrice: 420,
@@ -101,7 +101,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "The Laws of Human Nature ",
+    title: "The Laws of Human Nature by Robert Greene",
     img: "https://images-na.ssl-images-amazon.com/images/I/41PUWqRghSL._SX323_BO1,204,203,200_.jpg",
     originalPrice: 699,
     discountedPrice: 489,
@@ -113,7 +113,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "Mastery",
+    title: "Mastery book by Robert Greene",
     img: "https://images-na.ssl-images-amazon.com/images/I/41T1+apx5SL._SX325_BO1,204,203,200_.jpg",
     originalPrice: 699,
     discountedPrice: 467,

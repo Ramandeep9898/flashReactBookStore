@@ -15,6 +15,19 @@ const Categories = () => {
           Trending categories
         </p>
 
+        {/* {categoryData.map((items) => (
+          <>
+            <div className="categories-card-container">
+              <div className="categories-card">
+                <div className="categories-card-img">
+                  <img src={items.svg} alt="" className="SVG" />
+                </div>
+                <span className="capitalize fW-500">fiction</span>
+              </div>
+            </div>
+          </>
+        ))} */}
+
         <div className="categories-card-container">
           <div className="categories-card">
             <div className="categories-card-img">
