@@ -21,23 +21,7 @@ const Login = ({ setAuthVal }) => {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
 
-  // const loginHandler = () => {
-  //   if (
-  //     loginDetails.email.match(emailRegex) &&
-  //     loginDetails.password.match(passwordRegex)
-  //   ) {
-  //     setErrorMessage({
-  //       message: "",
-  //     });
-  //     logInAuth(loginDetails);
-  //   } else {
-  //     setErrorMessage({
-  //       message: "error",
-  //     });
-  //   }
-  // };
   const loginHandler = () => {
-    console.log(loginDetails);
     logInAuth(loginDetails);
   };
 
@@ -61,7 +45,6 @@ const Login = ({ setAuthVal }) => {
                 valide
                 onChange={(e) => {
                   setLoginDetails({ ...loginDetails, email: e.target.value });
-                  console.log(loginDetails);
                 }}
               />
             </div>
@@ -85,7 +68,6 @@ const Login = ({ setAuthVal }) => {
                 }}
               />
             </div>
-            {/* {console.log(loginDetails)} */}
             <div className="login-remember-ad-forget-pass dis-f">
               <div className="remen-me mgT-20">
                 <input type="checkbox" />

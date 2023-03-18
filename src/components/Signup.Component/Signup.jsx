@@ -15,11 +15,9 @@ const SignUp = ({ setAuthVal }) => {
   });
 
   const signUpHandler = (signUpDetails) => {
-    console.log("signup details", signUpDetails);
     signUpAuth(signUpDetails);
   };
 
-  console.log(signUpDetails);
   return (
     <>
       <main className="login-main">

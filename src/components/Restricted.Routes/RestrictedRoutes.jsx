@@ -5,7 +5,6 @@ import { useAuth } from "../../customHooks/useAuth";
 export function RestrictedRoute() {
   const { encodedToken } = useAuth();
   const location = useLocation();
-  console.log(encodedToken);
 
   return encodedToken ? (
     <Navigate to="/" state={{ from: location }} replace />

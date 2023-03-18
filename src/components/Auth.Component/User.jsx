@@ -3,7 +3,6 @@ import { useAuth } from "../../customHooks/useAuth";
 
 const User = () => {
   const { user, logOutAuth } = useAuth();
-  console.log(user);
   return (
     <>
       <main className="user-main">

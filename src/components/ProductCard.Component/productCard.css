@@ -2,7 +2,8 @@
   padding: 50px 30px;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 80px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* align-items: center; */
+  justify-content: left;
 }

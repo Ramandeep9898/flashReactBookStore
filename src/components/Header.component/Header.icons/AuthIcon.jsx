@@ -8,8 +8,6 @@ export const AuthIcon = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  console.log(user);
-
   return user ? (
     <button onClick={() => navigate("/user")} className="avatar avatar-s">
       <h2 className="user-avatar">{`${user.firstName[0]}${user.lastName[0]}`}</h2>

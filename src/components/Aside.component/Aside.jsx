@@ -1,5 +1,3 @@
-import react from "react";
-import { useReducer } from "react";
 import "./aside.css";
 import { useProduct } from "../ProductCard.Component/productContext";
 

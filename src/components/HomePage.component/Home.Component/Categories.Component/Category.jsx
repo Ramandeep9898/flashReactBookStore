@@ -7,7 +7,6 @@ import selfHelpSVG from "./self-helpSVG.svg";
 import { useData } from "../../../../customHooks/useData";
 const Categories = () => {
   const { categoryData } = useData();
-  console.log(categoryData);
   return (
     <>
       <section className="categories">

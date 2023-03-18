@@ -10,7 +10,6 @@ const AuthProvider = ({ children }) => {
   const [encodedToken, setEncodedToken] = useState();
 
   const logInAuth = async (loginDetails) => {
-    console.log(loginDetails);
     try {
       const response = await axios.post("/api/auth/login", {
         email: loginDetails.email,
@@ -18,7 +17,6 @@ const AuthProvider = ({ children }) => {
       });
 
       if (response.status === 200) {
-        console.log(response.data.encodedToken);
         localStorage.setItem("flashToken", response.data.encodedToken);
         setUser(response.data.foundUser);
         setEncodedToken(response.data.encodedToken);
