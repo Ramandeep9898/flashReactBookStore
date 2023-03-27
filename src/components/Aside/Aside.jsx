@@ -1,5 +1,5 @@
 import "./aside.css";
-import { useProduct } from "../ProductCard.Component/productContext";
+import { useProduct } from "../ProductCard/productContext";
 
 const Aside = () => {
   const { state, dispatch } = useProduct();
@@ -7,13 +7,13 @@ const Aside = () => {
   const { bestseller, fiction, nonfiction, horror } = categories;
 
   return (
-    <aside className="product-page-aside">
+    <div className="product-page-aside">
       <section className="aside-sec mgT-20">
         <div className="aside-sec-heading dis-f f-space-btw">
           <p className="h5 color capitalize fW-600">fliters</p>
 
           {/* clear button  */}
-          <button className="clear-btn">
+          <button className="clear-btn mgb-16">
             <p
               className="h6 color capitalize fW-400"
               onClick={() => dispatch({ type: "CLEAR" })}
@@ -22,13 +22,14 @@ const Aside = () => {
             </p>
           </button>
         </div>
+        <div className="divider mgT-16"></div>
 
         {/* categories */}
         <div className="aside-sec-heading mgT-16">
           <p className="h5 color capitalize fW-600">categories</p>
 
           <ul className="list">
-            <li className="list-items ">
+            <li className="aside-list-items">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 Best Seller
                 <input
@@ -43,7 +44,7 @@ const Aside = () => {
               </span>
             </li>
             {/* <li className="list-divider"></li> */}
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 fiction
                 <input
@@ -59,7 +60,7 @@ const Aside = () => {
             </li>
 
             {/* <li className="list-divider"></li> */}
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 non-fiction
                 <input
@@ -74,7 +75,7 @@ const Aside = () => {
               </span>
             </li>
 
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 horror
                 <input
@@ -91,12 +92,14 @@ const Aside = () => {
           </ul>
         </div>
 
+        <div className="divider"></div>
+
         {/* Discount */}
-        <div className="aside-sec-heading ">
+        <div className="aside-sec-heading  mgT-16">
           <p className="h5 color capitalize fW-600">discount</p>
 
           <ul className="list ">
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 50% and above
                 <input
@@ -111,7 +114,7 @@ const Aside = () => {
               </span>
             </li>
             {/* <li className="list-divider"></li> */}
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 40% and above
                 <input
@@ -127,7 +130,7 @@ const Aside = () => {
             </li>
 
             {/* <li className="list-divider"></li> */}
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 30% and above
                 <input
@@ -142,7 +145,7 @@ const Aside = () => {
               </span>
             </li>
 
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 20% and above
                 <input
@@ -157,7 +160,7 @@ const Aside = () => {
               </span>
             </li>
 
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 10% and above
                 <input
@@ -174,12 +177,14 @@ const Aside = () => {
           </ul>
         </div>
 
+        <div className="divider"></div>
+
         {/* sort by */}
-        <div className="aside-sec-heading ">
+        <div className="aside-sec-heading  mgT-16">
           <p className="h5 color capitalize fW-600">sort by</p>
 
           <ul className="list ">
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 price - low to high
                 <input
@@ -191,7 +196,7 @@ const Aside = () => {
               </span>
             </li>
             {/* <li className="list-divider"></li> */}
-            <li className="list-items ">
+            <li className="aside-list-items ">
               <span className="list-with-icons checkbox h6 color capitalize fW-400">
                 price - high to low
                 <input
@@ -205,7 +210,7 @@ const Aside = () => {
           </ul>
         </div>
       </section>
-    </aside>
+    </div>
   );
 };
 export default Aside;

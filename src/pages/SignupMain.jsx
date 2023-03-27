@@ -1,6 +1,6 @@
 import React from "react";
-import SignUp from "../components/Signup.Component/Signup";
-import Header from "../components/Header.component/Header";
+import SignUp from "../components/Signup/Signup";
+import Header from "../components/Header/Header";
 
 const SignupMain = () => {
   return (

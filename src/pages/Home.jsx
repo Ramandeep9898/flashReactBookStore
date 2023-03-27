@@ -1,8 +1,5 @@
-import react from "react";
-import Header from "./../components/Header.component/Header";
-import Hero from "../components/HomePage.component/Home.Component/hero.component/Hero";
-import Categories from "../components/HomePage.component/Home.Component/Categories.Component/Category";
-import Footer from "../components/HomePage.component/Home.Component/Footer.Component/Footer";
+import Hero from "../components/HomePage/Home/Hero/Hero";
+import Categories from "../components/HomePage/Home/Categories/Category.jsx";
 
 const Home = () => {
   return (

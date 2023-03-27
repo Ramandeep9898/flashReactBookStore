@@ -1,19 +1,16 @@
 import "./App.css";
 import "./style/style.css";
-import Header from "./components/Header.component/Header";
-import Footer from "./components/HomePage.component/Home.Component/Footer.Component/Footer";
+import Header from "./components/Header/Header";
 import Home from "./pages/Home";
-import ProductListingMain from "./components/ProductListMain.component/ProductListMain";
-import ProductDetailMain from "./components/ProductCard.Component/ProductDetailsMain.Component/ProductDetailMain";
+import ProductListingMain from "./components/ProductListMain/ProductListMain";
+import ProductDetailMain from "./components/ProductDetails/ProductDetailMain";
 import Wishlist from "./pages/Wishlist";
-import { Auth } from "./components/Auth.Component/Auth";
+import { Auth } from "./components/Auth/Auth";
 import Cart from "./pages/Cart";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/Private.Routes/PrivateRoutes";
 import { RestrictedRoute } from "./components/Restricted.Routes/RestrictedRoutes";
-import User from "./components/Auth.Component/User";
-// import MockAPI from "../Mockman";
-// import MockmanEs from "mockman-js";
+import User from "./components/Auth/User";
 
 function App() {
   return (
@@ -26,8 +23,8 @@ function App() {
           path="/productListingPage/:productID"
           element={<ProductDetailMain />}
         />
-        <Route path="/cart" element={<Cart />} />
         <Route element={<PrivateRoute />}>
+          <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/user" element={<User />} />
         </Route>
@@ -36,7 +33,6 @@ function App() {
           <Route path="/auth" element={<Auth />} />
         </Route>
       </Routes>
-      {/* <Footer /> */}
     </div>
   );
 }

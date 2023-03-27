@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { ProductProvider } from "./components/ProductCard.Component/productContext";
+import { ProductProvider } from "./components/ProductCard/productContext";
 import { AuthProvider } from "./customHooks/useAuth";
 import { CartProvider } from "./contexts/useCart";
 import { WishListProvider } from "./contexts/useWishlist";

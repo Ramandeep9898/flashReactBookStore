@@ -8,82 +8,26 @@ import { useAuth } from "../../customHooks/useAuth";
 import { useWishList } from "../../contexts/useWishlist";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
-import getSortedProducts from "../Aside.component/fliters/getSortedProducts";
-import { getDiscountedProducts } from "../Aside.component/fliters/getDiscountedProducts";
-import { getFliteredProducts } from "../Aside.component/fliters/getFlitedproducts";
+import getSortedProducts from "../Aside/fliters/getSortedProducts";
+import { getDiscountedProducts } from "../Aside/fliters/getDiscountedProducts";
+import { getFliteredProducts } from "../Aside/fliters/getFlitedproducts";
 import { useState } from "react";
 
-const Products = () => {
-  const { state } = useProduct();
-  const { productData, categoryData } = useData();
-
-  const categoryProducts = getFliteredProducts(
-    productData,
-    state.categories.bestseller,
-    state.categories.fiction,
-    state.categories.nonfiction,
-    state.categories.horror
-  );
-
-  const discountedProducts = getDiscountedProducts(
-    categoryProducts,
-    state.discount
-  );
-
-  const sortProducts = getSortedProducts(discountedProducts, state.sortBy);
-
-  return (
-    <main className="product-page-main">
-      <div className="product-page-main-heading mgT-20">
-        <p className="h5 color capitalize fW-600">showing the products</p>
-        <span className="h6">(showing {sortProducts.length} products)</span>
-      </div>
-      <div className="product-cards">
-        {sortProducts &&
-          sortProducts.map((productDetails) => (
-            <ProductCard
-              productDetails={productDetails}
-              sortProducts={sortProducts}
-            />
-          ))}
-      </div>
-    </main>
-  );
-};
-export default Products;
-
-export const ProductCard = ({ productDetails, sortProducts }) => {
+export const Card = ({ productDetails, sortProduct }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const pathName = useLocation();
-  const { state } = useProduct();
   const { wishList, addToWishList, removeFromWishList } = useWishList();
-  const { productData, categoryData } = useData();
   const { cart, addToCart } = useCart();
-  const [productAdded, setProductAdded] = useState(false);
 
   const isProductInWishList = wishList.some(
-    (item) => item._id === sortProducts._id
+    (item) => item._id === productDetails._id
   )
     ? true
     : false;
-  const isProductInCart = cart?.some((item) => item._id === sortProducts._id)
+  const isProductInCart = cart?.some((item) => item._id === productDetails._id)
     ? true
     : false;
-
-  const categoryProducts = getFliteredProducts(
-    productData,
-    state.categories.bestseller,
-    state.categories.fiction,
-    state.categories.nonfiction,
-    state.categories.horror
-  );
-
-  const discountedProducts = getDiscountedProducts(
-    categoryProducts,
-    state.discount
-  );
-  let itemInCart;
 
   return (
     <>
@@ -91,7 +35,16 @@ export const ProductCard = ({ productDetails, sortProducts }) => {
         <button
           className="Floating-btn postion"
           onClick={() => {
-            addToWishList(productDetails);
+            if (!user) {
+              navigate("/auth", {
+                state: { from: pathName },
+                replace: true,
+              });
+            } else if (isProductInWishList) {
+              removeFromWishList(productDetails);
+            } else {
+              addToWishList(productDetails);
+            }
           }}
         >
           {isProductInWishList && user ? <AiFillHeart /> : <AiOutlineHeart />}
@@ -119,7 +72,6 @@ export const ProductCard = ({ productDetails, sortProducts }) => {
             <div className="mgT-4">
               &#8377;{productDetails.discountedPrice}
               <span className="original-price">
-                {" "}
                 &#8377;{productDetails.originalPrice}
               </span>
               &nbsp;
@@ -141,7 +93,7 @@ export const ProductCard = ({ productDetails, sortProducts }) => {
               }
             }}
           >
-            add to cart
+            {isProductInCart ? "Go to Cart" : "add to cart"}
           </button>
         </div>
       </div>

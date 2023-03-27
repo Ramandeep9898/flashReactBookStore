@@ -1,0 +1,20 @@
+.mgT-20 {
+  margin-top: 20px;
+}
+.mgT-40 {
+  margin-top: 40px;
+}
+.mgT-8 {
+  margin-top: 8px;
+}
+.mgT-4 {
+  margin-top: 4px;
+}
+.mgT-16 {
+  margin-top: 16px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

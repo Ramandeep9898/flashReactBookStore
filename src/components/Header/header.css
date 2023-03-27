@@ -13,9 +13,6 @@
 /* CL  */
 .navigation {
   z-index: 1;
-  position: sticky;
-  top: 0px;
-  left: 0px;
   box-shadow: 0px 8px 29px -8px rgba(168, 168, 168, 0.42);
   border-radius: 0px;
   display: flex;

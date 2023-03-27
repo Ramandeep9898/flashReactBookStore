@@ -3,7 +3,7 @@ import { useLocation, Outlet, Navigate } from "react-router-dom";
 import { useAuth } from "../../customHooks/useAuth";
 
 const PrivateRoute = () => {
-  const { encodedToken } = useAuth();
+  const { encodedToken, user } = useAuth();
   const location = useLocation();
   return encodedToken ? (
     <Outlet />

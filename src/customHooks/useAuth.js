@@ -5,7 +5,6 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const flashToken = localStorage.getItem("flashToken");
   const [user, setUser] = useState();
   const [encodedToken, setEncodedToken] = useState();
 
