@@ -10,7 +10,7 @@ import Cart from "./pages/Cart";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/Private.Routes/PrivateRoutes";
 import { RestrictedRoute } from "./components/Restricted.Routes/RestrictedRoutes";
-import User from "./components/Auth/User";
+import User from "./components/User/User";
 
 function App() {
   return (

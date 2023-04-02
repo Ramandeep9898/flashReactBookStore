@@ -1,13 +1,20 @@
 import "./checkout.css";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { useCart } from "../../contexts/useCart";
 export const CheckOut = () => {
+  const { cart } = useCart();
+  // const priceOfItems = cart.reducer();
+  console.log(cart);
+
   return (
     <div className="checkout-container">
       <div className="price-details-heading">Price Detials</div>
       <div className="hr-divider mgT-16 "></div>
       <div className="details mgT-16">
         <div className="detail">Quantity:</div>
-        <div className="detail">750</div>
+        <div className="detail">
+          {cart.length} {cart.length > 1 ? "items" : "item"}
+        </div>
       </div>
 
       <div className="details mgT-16">

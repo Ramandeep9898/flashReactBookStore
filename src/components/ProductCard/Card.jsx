@@ -7,6 +7,8 @@ import { useCart } from "../../contexts/useCart";
 import { useAuth } from "../../customHooks/useAuth";
 import { useWishList } from "../../contexts/useWishlist";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { FiShoppingBag } from "react-icons/fi";
+import { HiStar } from "react-icons/hi";
 
 import getSortedProducts from "../Aside/fliters/getSortedProducts";
 import { getDiscountedProducts } from "../Aside/fliters/getDiscountedProducts";
@@ -31,9 +33,10 @@ export const Card = ({ productDetails, sortProduct }) => {
 
   return (
     <>
-      <div key={productDetails._id} className="card-basic">
+      <div key={productDetails._id} className="card-basic card-basic-shadow">
+        {/* add to wishlist  */}
         <button
-          className="Floating-btn postion"
+          className="Floating-btn postion wishlist-btn"
           onClick={() => {
             if (!user) {
               navigate("/auth", {
@@ -49,37 +52,52 @@ export const Card = ({ productDetails, sortProduct }) => {
         >
           {isProductInWishList && user ? <AiFillHeart /> : <AiOutlineHeart />}
         </button>
+
         <img
           src={productDetails.img}
           alt=""
           className="avatar sq-avatar card-img"
         />
         <div className="card-typo">
+          {/* badge  */}
+          <div className="rating-div">
+            <span className="badge badge-green">
+              {productDetails.rating}
+              <HiStar />
+            </span>
+            <span className="badge badge-blue">original </span>
+            <span className="badge badge-purple ">bestseller </span>
+          </div>
+
+          {/* title  */}
           <Link to={`/productListingPage/${productDetails._id}`}>
-            <div className="card capitalize fW-400 color text-left">
+            <div className="card capitalize fW-500 color text-left mgT-4">
               {productDetails.title}
             </div>
           </Link>
-          <div className="card-subtitle capitalize fW-400 color text-left mgT-4">
-            -by {productDetails.author}
-          </div>
-          <div className="card capitalize fW-500 color text-left mgT-4">
-            <div className="rating-div">
-              <span className="rating">{productDetails.rating}&#9733;</span>
-              <span className="cover">( {productDetails.cover} )</span>
-            </div>
 
-            <div className="mgT-4">
-              &#8377;{productDetails.discountedPrice}
-              <span className="original-price">
+          {/* author  */}
+          <div className="card-subtitle capitalize fW-500 color text-left ">
+            Author: {productDetails.author}
+          </div>
+
+          {/* price  */}
+          <div className="card  color text-left">
+            <div className="mgT-4 fW-500">
+              &#8377;{productDetails.discountedPrice}{" "}
+              <span className="original-price  fW-500">
                 &#8377;{productDetails.originalPrice}
               </span>
               &nbsp;
-              <span className="discount">{productDetails.discount}%</span>
+              <span className="discount text-red fW-500">
+                ({productDetails.discount}% Off)
+              </span>
             </div>
           </div>
+
+          {/* add to cart  */}
           <button
-            className="btn solid-pri-btn width100 mg-top8"
+            className="btn solid-pri-btn width100 mg-top8 w400"
             onClick={() => {
               if (!user) {
                 navigate("/auth", {
@@ -94,6 +112,7 @@ export const Card = ({ productDetails, sortProduct }) => {
             }}
           >
             {isProductInCart ? "Go to Cart" : "add to cart"}
+            <FiShoppingBag />
           </button>
         </div>
       </div>

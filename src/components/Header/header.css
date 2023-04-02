@@ -10,6 +10,16 @@
   transform: skew(15deg, 15deg);
 }
 
+.nav-options-icon {
+  font-size: 20px;
+  color: black;
+}
+
+.nav-options-heading {
+  font-size: 14px;
+  color: black;
+}
+
 /* CL  */
 .navigation {
   z-index: 1;
@@ -38,7 +48,7 @@
 .nav-container-endsec {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 25px;
 }
 .nav-container-endsec > i {
   cursor: pointer;
@@ -49,4 +59,14 @@
 }
 .search-btn > input {
   padding: 11px 1rem 8px 4rem;
+}
+.blue-btn {
+  background-color: #007fff;
+  font-weight: 400 !important;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

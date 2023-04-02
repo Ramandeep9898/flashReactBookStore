@@ -16,11 +16,12 @@
 
 .product-page-aside {
   background-color: var(--lightmode-bg-color);
-  width: 20vw;
+  width: 19vw;
 }
 .product-page-main {
+  padding: 0 25px;
   background-color: #f7f7f7;
-  width: 80vw;
+  width: 81vw;
   height: 90vh;
   overflow-y: scroll;
 }

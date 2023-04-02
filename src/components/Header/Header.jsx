@@ -1,17 +1,19 @@
-import react from "react";
 import "./header.css";
-import logo from "./flashHeaderLogo.svg";
 import { Link } from "react-router-dom";
-import {
-  AiOutlineShopping,
-  AiOutlineHeart,
-  AiOutlineLogin,
-} from "react-icons/ai";
-import { BiHomeAlt } from "react-icons/bi";
-import { ImBooks } from "react-icons/im";
-import { AuthIcon } from "./Header.icons/AuthIcon";
+import { FiShoppingBag } from "react-icons/fi";
+import { IoLibraryOutline } from "react-icons/io5";
+import { AiOutlineHeart, AiOutlineLogin } from "react-icons/ai";
+import { BiHomeCircle } from "react-icons/bi";
+import { useAuth } from "../../customHooks/useAuth";
+import { BiUserCircle } from "react-icons/bi";
+import { useWishList } from "../../contexts/useWishlist";
+import { useCart } from "../../contexts/useCart";
 
 const Header = () => {
+  const { cart } = useCart();
+  const { wishList } = useWishList();
+  const { user } = useAuth();
+  console.log(user);
   return (
     <header className="product-page-header">
       <nav className="navigation">
@@ -29,56 +31,73 @@ const Header = () => {
           {/* home icon  */}
           <Link to="/">
             <div className="navbar-icons">
-              <div className="size badge-on-avatar">
-                <BiHomeAlt />
-                {/* <span className="badge-count"></span> */}
+              <div className="nav-options-icon badge-on-avatar">
+                <BiHomeCircle />
               </div>
+              <div className="nav-options-heading">home</div>
             </div>
           </Link>
 
           {/* Product listed page  */}
           <Link to="/productListingPage">
             <div className="navbar-icons">
-              <div className="size badge-on-avatar">
-                <ImBooks />
-                {/* <span className="badge-count"></span> */}
+              <div className="nav-options-icon  badge-on-avatar">
+                <IoLibraryOutline />
               </div>
+              <div className="nav-options-heading">Books</div>
             </div>
           </Link>
 
           <Link to="/wishlist">
             <div className="navbar-icons">
-              <div className="size badge-on-avatar">
+              <div className="nav-options-icon  badge-on-avatar">
                 <AiOutlineHeart />
-                {/* <span className="badge-count"></span> */}
+                {wishList.length != 0 && (
+                  <span className="badge-count">{wishList.length}</span>
+                )}
               </div>
+              <div className="nav-options-heading">WishList</div>
             </div>
           </Link>
 
           <Link to="/cart">
             <div className="navbar-icons">
-              <div className="size badge-on-avatar">
-                <AiOutlineShopping />
-                {/* <span className="badge-count"></span> */}
+              <div className="nav-options-icon  badge-on-avatar">
+                <FiShoppingBag />
+                {cart.length != 0 && (
+                  <span className="badge-count">{cart.length}</span>
+                )}
               </div>
+
+              <div className="nav-options-heading">Cart</div>
             </div>
           </Link>
+        </section>
 
-          {/* <Link to="/productListingPage">
+        <section className="nav-container-endsec">
+          <Link to="/productListingPage">
             <div className="badge-on-avatar navbar-icons">
-              <Link to="/login">
-                <button className="btn cta-black-btn">
-                  login <AiOutlineLogin />
-                </button>
-              </Link>
-            </div>
-          </Link> */}
+              {user ? (
+                <Link to="/user">
+                  <div className="navbar-icons">
+                    <div className="nav-options-icon  badge-on-avatar">
+                      <BiUserCircle />
+                      {/* <span className="badge-count"></span> */}
+                    </div>
 
-          {/* <div className="badge-on-avatar navbar-icons">
-            <div className="size">
-              <AuthIcon />
+                    <div className="nav-options-heading">{user.firstName}</div>
+                  </div>
+                </Link>
+              ) : (
+                <Link to="/auth">
+                  <button className="btn blue-btn">
+                    login
+                    <AiOutlineLogin />
+                  </button>
+                </Link>
+              )}
             </div>
-          </div> */}
+          </Link>
         </section>
       </nav>
     </header>

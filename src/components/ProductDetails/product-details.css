@@ -6,3 +6,52 @@
   justify-content: center;
   align-content: center;
 }
+.gap-10 {
+  gap: 10px;
+}
+.outline-blue {
+  border: 1px solid #007fff;
+  color: #007fff;
+  font-weight: 400;
+}
+
+.pincode-input {
+  border: 2px solid rgba(128, 128, 128, 0.8);
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  min-width: 50%;
+  border-radius: 8px;
+}
+.link {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: -60px;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  color: #007fff;
+}
+.black-btn {
+  padding: 8px 24px;
+  background-color: black;
+  font-weight: 400;
+  border-radius: 50px;
+}
+.black-btn-outlined {
+  border: 1px solid black;
+  color: black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 400;
+}
+.layout {
+  padding: 1.5rem;
+}
+.authors-book-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}

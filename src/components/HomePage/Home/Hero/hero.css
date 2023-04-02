@@ -24,7 +24,7 @@
 }
 .aside-main-section > p {
   font-family: "DM Serif Display", serif;
-  font-size: 7rem;
+  font-size: 5rem;
   color: var(--heading-black);
   line-height: 1;
 }
@@ -53,4 +53,8 @@
 }
 .aside-main-section > span {
   max-width: 500px;
+}
+.sub-heading {
+  font-size: 18px;
+  font-weight: 400;
 }
