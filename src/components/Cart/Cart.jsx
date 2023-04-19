@@ -11,18 +11,10 @@ import { HiStar } from "react-icons/hi";
 
 export const CartCard = () => {
   const { user } = useAuth();
-  const { wishList, addToWishList, removeFromWishList } = useWishList();
-  const [quantity, setQuantity] = useState(1);
+  const { addToWishList } = useWishList();
 
   const { cart, removeFromCart } = useCart();
-  const navigate = useNavigate();
-  const pathName = useLocation();
-  // const { removeFromCart, updateCartItemQuantity } = useCart();
   console.log(cart);
-
-  const incrementQuantity = () => {
-    setQuantity((prev) => prev + 1);
-  };
 
   return (
     <>
@@ -37,10 +29,6 @@ export const CartCard = () => {
               />
               <div class="card-typo card-typo-vertical">
                 <div className="rating-div">
-                  <span className="badge badge-green">
-                    {cartDetails.rating}
-                    <HiStar />
-                  </span>
                   <span className="badge badge-blue">original </span>
                   <span className="badge badge-purple ">bestseller </span>
                   <span className="badge badge-red ">Few pieces left! </span>
@@ -53,8 +41,12 @@ export const CartCard = () => {
                   Author: {cartDetails.author}
                 </div>
 
-                <div class="card capitalize fW-500 color text-left mgT-8">
-                  &#8377; {cartDetails.discountedPrice}
+                <div class="card capitalize fW-500 color text-left mgT-8 flex-row">
+                  &#8377; {cartDetails.discountedPrice}{" "}
+                  <span className="badge badge-green">
+                    {cartDetails.rating}
+                    <HiStar />
+                  </span>
                 </div>
 
                 <Quantity id={cartDetails._id} />
@@ -62,7 +54,10 @@ export const CartCard = () => {
                 <div className="flex-row mgT-8">
                   <button
                     class="btn solid-pri-btn  mg-top8 gray-btn"
-                    onClick={() => removeFromCart(cartDetails._id)}
+                    onClick={() =>
+                      removeFromCart(cartDetails._id) &&
+                      addToWishList(cartDetails)
+                    }
                   >
                     Move to Whishlist <AiOutlineHeart />
                   </button>
@@ -84,7 +79,7 @@ export const CartCard = () => {
 };
 
 export const Quantity = ({ id }) => {
-  const { updateCartItemQuantity } = useCart();
+  const { updateCartItemQuantity, removeFromCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
   const incrementQuantity = () => {
@@ -92,8 +87,9 @@ export const Quantity = ({ id }) => {
   };
 
   const decrementQuantity = () => {
-    setQuantity((prev) => prev - 1);
     console.log(quantity);
+    // quantity === 0 ? removeFromCart(id) : "";
+    setQuantity((prev) => prev - 1);
   };
   return (
     <>
@@ -104,7 +100,7 @@ export const Quantity = ({ id }) => {
             decrementQuantity();
             updateCartItemQuantity(quantity);
           }}
-          disabled={quantity <= 0 ? true : false}
+          disabled={quantity <= 1 ? true : false}
         >
           <GrFormSubtract />
         </button>

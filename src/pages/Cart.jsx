@@ -8,7 +8,7 @@ const Cart = () => {
   return (
     <>
       {cart.length == 0 && (
-        <div className="flex flex-col">
+        <div className="flex flex-col empty-layout">
           <h1 className="mgT-16 h1 heading">Cart</h1>
           <div className="h3 fW-500 mgT-8">Nothing in Cart</div>
           <Link to="/productListingPage">

@@ -1,5 +1,6 @@
 import "./App.css";
 import "./style/style.css";
+import "./index.css";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import ProductListingMain from "./components/ProductListMain/ProductListMain";
@@ -11,6 +12,7 @@ import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/Private.Routes/PrivateRoutes";
 import { RestrictedRoute } from "./components/Restricted.Routes/RestrictedRoutes";
 import User from "./components/User/User";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

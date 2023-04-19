@@ -1,11 +1,10 @@
 import "./header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { IoLibraryOutline } from "react-icons/io5";
 import { AiOutlineHeart, AiOutlineLogin } from "react-icons/ai";
-import { BiHomeCircle } from "react-icons/bi";
+import { BiHomeCircle, BiUserCircle } from "react-icons/bi";
 import { useAuth } from "../../customHooks/useAuth";
-import { BiUserCircle } from "react-icons/bi";
 import { useWishList } from "../../contexts/useWishlist";
 import { useCart } from "../../contexts/useCart";
 
@@ -29,49 +28,75 @@ const Header = () => {
 
         <section className="nav-container-endsec">
           {/* home icon  */}
-          <Link to="/">
-            <div className="navbar-icons">
-              <div className="nav-options-icon badge-on-avatar">
-                <BiHomeCircle />
+          <NavLink to="/">
+            {({ isActive, isPending }) => (
+              <div
+                className={
+                  isActive ? "navbar-icons nav-active" : "navbar-icons"
+                }
+              >
+                <div className="nav-options-icon badge-on-avatar">
+                  <BiHomeCircle />
+                </div>
+                <div className="nav-options-heading">home</div>
               </div>
-              <div className="nav-options-heading">home</div>
-            </div>
-          </Link>
+            )}
+          </NavLink>
 
           {/* Product listed page  */}
-          <Link to="/productListingPage">
-            <div className="navbar-icons">
-              <div className="nav-options-icon  badge-on-avatar">
-                <IoLibraryOutline />
+          <NavLink to="/productListingPage">
+            {({ isActive, isPending }) => (
+              <div
+                className={
+                  isActive ? "navbar-icons nav-active" : "navbar-icons"
+                }
+              >
+                <div className="nav-options-icon  badge-on-avatar">
+                  <IoLibraryOutline />
+                </div>
+                <div className="nav-options-heading">Books</div>
               </div>
-              <div className="nav-options-heading">Books</div>
-            </div>
-          </Link>
+            )}
+          </NavLink>
 
-          <Link to="/wishlist">
-            <div className="navbar-icons">
-              <div className="nav-options-icon  badge-on-avatar">
-                <AiOutlineHeart />
-                {wishList.length != 0 && (
-                  <span className="badge-count">{wishList.length}</span>
-                )}
+          <NavLink to="/wishlist">
+            {({ isActive, isPending }) => (
+              <div
+                className={
+                  isActive ? "navbar-icons nav-active" : "navbar-icons"
+                }
+              >
+                <div className="nav-options-icon  badge-on-avatar">
+                  <AiOutlineHeart />
+                  {wishList.length != 0 && (
+                    <span className="badge-count-updated">
+                      {wishList.length}
+                    </span>
+                  )}
+                </div>
+                <div className="nav-options-heading">WishList</div>
               </div>
-              <div className="nav-options-heading">WishList</div>
-            </div>
-          </Link>
+            )}
+          </NavLink>
 
-          <Link to="/cart">
-            <div className="navbar-icons">
-              <div className="nav-options-icon  badge-on-avatar">
-                <FiShoppingBag />
-                {cart.length != 0 && (
-                  <span className="badge-count">{cart.length}</span>
-                )}
+          <NavLink to="/cart">
+            {({ isActive, isPending }) => (
+              <div
+                className={
+                  isActive ? "navbar-icons nav-active" : "navbar-icons"
+                }
+              >
+                <div className="nav-options-icon  badge-on-avatar">
+                  <FiShoppingBag />
+                  {cart.length != 0 && (
+                    <span className="badge-count-updated">{cart.length}</span>
+                  )}
+                </div>
+
+                <div className="nav-options-heading">Cart</div>
               </div>
-
-              <div className="nav-options-heading">Cart</div>
-            </div>
-          </Link>
+            )}
+          </NavLink>
         </section>
 
         <section className="nav-container-endsec">
@@ -82,7 +107,7 @@ const Header = () => {
                   <div className="navbar-icons">
                     <div className="nav-options-icon  badge-on-avatar">
                       <BiUserCircle />
-                      {/* <span className="badge-count"></span> */}
+                      {/* <span className="badge-count-updated"></span> */}
                     </div>
 
                     <div className="nav-options-heading">{user.firstName}</div>

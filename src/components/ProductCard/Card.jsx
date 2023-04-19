@@ -1,7 +1,5 @@
 import "./productCard.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useData } from "../../customHooks/useData";
-import { useProduct } from "./productContext";
 import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/useCart";
 import { useAuth } from "../../customHooks/useAuth";
@@ -9,11 +7,6 @@ import { useWishList } from "../../contexts/useWishlist";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiShoppingBag } from "react-icons/fi";
 import { HiStar } from "react-icons/hi";
-
-import getSortedProducts from "../Aside/fliters/getSortedProducts";
-import { getDiscountedProducts } from "../Aside/fliters/getDiscountedProducts";
-import { getFliteredProducts } from "../Aside/fliters/getFlitedproducts";
-import { useState } from "react";
 
 export const Card = ({ productDetails, sortProduct }) => {
   const { user } = useAuth();
@@ -65,8 +58,8 @@ export const Card = ({ productDetails, sortProduct }) => {
               {productDetails.rating}
               <HiStar />
             </span>
-            <span className="badge badge-blue">original </span>
-            <span className="badge badge-purple ">bestseller </span>
+            <span className="badge badge-blue">{productDetails.cover} </span>
+            <span className="badge badge-purple ">{productDetails.badge} </span>
           </div>
 
           {/* title  */}

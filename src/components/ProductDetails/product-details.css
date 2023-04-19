@@ -1,6 +1,12 @@
 .width80 {
   width: 80%;
 }
+.w100 {
+  width: 100%;
+}
+.w50 {
+  width: 50%;
+}
 .display-play-img {
   display: flex;
   justify-content: center;
@@ -35,16 +41,16 @@
   color: #007fff;
 }
 .black-btn {
-  padding: 8px 24px;
-  background-color: black;
+  padding: 16px 24px;
+  background-color: #303030;
   font-weight: 400;
-  border-radius: 50px;
+  border-radius: 8px;
 }
 .black-btn-outlined {
-  border: 1px solid black;
-  color: black;
-  padding: 8px 24px;
-  border-radius: 50px;
+  border: 1px solid #303030;
+  color: #303030;
+  padding: 16px 24px;
+  border-radius: 8px;
   font-weight: 400;
 }
 .layout {

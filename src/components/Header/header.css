@@ -1,6 +1,7 @@
 .navbar-icons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 5px;
   justify-content: center;
   align-items: center;
 }
@@ -11,13 +12,24 @@
 }
 
 .nav-options-icon {
-  font-size: 20px;
-  color: black;
+  font-size: 22px;
+  color: #71717a;
 }
 
 .nav-options-heading {
-  font-size: 14px;
-  color: black;
+  margin-top: -5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #71717a;
+}
+.nav-active {
+  color: #4f46e5;
+  padding: 7px 16px;
+  border-radius: 8px;
+  background-color: rgba(79, 70, 229, 0.2);
+}
+.nav-active > div {
+  color: #4f46e5;
 }
 
 /* CL  */
@@ -69,4 +81,19 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+.badge-count-updated {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  width: 16px;
+  line-height: 1.3;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: rgb(233, 34, 34);
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  font-size: 10px;
 }

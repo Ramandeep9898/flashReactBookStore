@@ -10,12 +10,8 @@ const Wishlist = () => {
     <>
       <h1 className="mgT-16 heading">Wishlist</h1>
       <div className="wishlist-cards-section mgT-20">
-        {/* {wishList.map((wishlistCardDetail) => {
-          return <WishlistCard wishlistCardDetail={wishlistCardDetail} />;
-        })} */}
-
         {wishList.length == 0 && (
-          <div className="flex flex-col">
+          <div className="flex flex-col empty-layout">
             <div className="h3 fW-500">Nothing in WishList</div>
             <Link to="/productListingPage">
               <button className="btn blue-btn big-btn mgT-8">
