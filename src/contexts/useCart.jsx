@@ -76,6 +76,8 @@ function CartProvider({ children }) {
   };
 
   const updateCartItemQuantity = async (productId, quantity) => {
+    console.log("response.data.cart", productId, quantity);
+
     try {
       const response = await axios.post(
         `/api/user/cart/${productId}`,
@@ -89,6 +91,9 @@ function CartProvider({ children }) {
         }
       );
       if (response.status === 200) {
+        console.log("response.data.cart");
+
+        console.log(response.data.cart);
         setCart(response.data.cart);
         // dispatch({
         //   type: "TOAST_SUCCESS",
@@ -96,6 +101,8 @@ function CartProvider({ children }) {
         // });
       }
     } catch (error) {
+      console.log("response.data.not efgej cart");
+
       console.error(error.response.data.errors);
       //   dispatch({ type: "TOAST_ERROR", payload: error.response.data.errors });
     }

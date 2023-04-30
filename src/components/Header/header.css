@@ -73,7 +73,8 @@
   padding: 11px 1rem 8px 4rem;
 }
 .blue-btn {
-  background-color: #007fff;
+  padding: 16px 24px;
+  background-color: #4f46e5;
   font-weight: 400 !important;
 }
 .btn {

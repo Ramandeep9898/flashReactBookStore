@@ -23,7 +23,7 @@ const Hero = () => {
           {/* line-svg  */}
           <svg
             className="mg-top16"
-            viewbox="0 0 172 16"
+            viewBox="0 0 172 16"
             fill="none"
             stroke="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +180,7 @@ const Hero = () => {
             Best Sellers. Top Brand and Quality Books.
           </p>
           <Link to="/productListingPage">
-            <button className="btn black-btn mg-top16 big-btn">
+            <button className="btn black-btn mgT-60 big-btn">
               shop now
               <BsArrowUpRight />
             </button>

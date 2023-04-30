@@ -23,16 +23,13 @@ const SignUp = ({ setAuthVal }) => {
       <main className="login-main">
         <div className="login-container">
           <div className="login-body">
-            <p className="h3 color capitalize fW-700 text-center">sign up</p>
+            <p className="form-heading">Join Flashkart</p>
             <div className="input-box mgT-20">
-              <label for="email" className="textarea-label">
-                email
-              </label>
               <input
                 id="email"
                 type="email"
-                className="input"
-                placeholder="you@example.com"
+                className="input-updated"
+                placeholder="Email Address"
                 valide
                 value={signUpDetails.email}
                 onChange={(e) => {
@@ -42,13 +39,10 @@ const SignUp = ({ setAuthVal }) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label for="first-name" className="textarea-label">
-                first name
-              </label>
               <input
                 id="first-name"
                 type="text"
-                className="input"
+                className="input-updated"
                 placeholder="First Name"
                 valide
                 value={signUpDetails.firstName}
@@ -62,13 +56,10 @@ const SignUp = ({ setAuthVal }) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label for="last-name" className="textarea-label">
-                last name
-              </label>
               <input
                 id="last-name"
                 type="email"
-                className="input"
+                className="input-updated"
                 placeholder="Last Name"
                 valide
                 value={signUpDetails.lastName}
@@ -82,14 +73,11 @@ const SignUp = ({ setAuthVal }) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label for="password" className="textarea-label">
-                password
-              </label>
               <input
                 id="password"
                 type="password"
-                className="input"
-                placeholder="**********"
+                className="input-updated"
+                placeholder="Password"
                 valide
                 value={signUpDetails.password}
                 onChange={(e) => {
@@ -102,29 +90,30 @@ const SignUp = ({ setAuthVal }) => {
             </div>
 
             <div className="login-remember-ad-forget-pass dis-f">
-              <div className="remen-me mgT-20">
-                <input type="checkbox" />
-                <label className="textarea-label">
-                  i accept all terms & conditions{" "}
-                </label>
-              </div>
+              <div className="remen-me mgT-20"></div>
             </div>
-            <button
-              className="btn solid-pri-btn width100 mgT-20"
-              onClick={() => {
-                signUpHandler(signUpDetails);
-              }}
-            >
-              sign up
-            </button>
 
-            <p
-              className="h5 color capitalize fW-500 text-center mgT-20"
-              onClick={() => {
-                setAuthVal(true);
-              }}
-            >
-              already have a account{" "}
+            <div className="absolute mg-top16">
+              <div className="gradient w100 mgT-40"></div>
+              <button
+                className="btn black-btn big-btn w100 "
+                onClick={() => {
+                  signUpHandler(signUpDetails);
+                }}
+              >
+                sign up
+              </button>
+            </div>
+            <p className="h5 color capitalize fW-400 text-center mgT-20">
+              Already joined?{" "}
+              <span
+                className="fW-500 underline cursor"
+                onClick={() => {
+                  setAuthVal(true);
+                }}
+              >
+                Login now
+              </span>
             </p>
           </div>
         </div>

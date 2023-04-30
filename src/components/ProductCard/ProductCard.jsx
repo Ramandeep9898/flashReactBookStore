@@ -33,8 +33,12 @@ const Products = () => {
       </div>
       <div className="product-cards">
         {sortProducts &&
-          sortProducts.map((productDetails) => (
-            <Card productDetails={productDetails} sortProduct={sortProducts} />
+          sortProducts.map((productDetails, i) => (
+            <Card
+              productDetails={productDetails}
+              sortProduct={sortProducts}
+              key={i}
+            />
           ))}
       </div>
     </main>

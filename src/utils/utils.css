@@ -4,6 +4,10 @@
 .mgT-40 {
   margin-top: 40px;
 }
+
+.mgT-60 {
+  margin-top: 60px;
+}
 .mgT-8 {
   margin-top: 8px;
 }
@@ -25,4 +29,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.text-gray {
+  color: #a1a1aa;
 }

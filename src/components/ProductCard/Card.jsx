@@ -9,7 +9,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { HiStar } from "react-icons/hi";
 
 export const Card = ({ productDetails, sortProduct }) => {
-  const { user } = useAuth();
+  const { user, encodedToken } = useAuth();
   const navigate = useNavigate();
   const pathName = useLocation();
   const { wishList, addToWishList, removeFromWishList } = useWishList();
@@ -31,7 +31,7 @@ export const Card = ({ productDetails, sortProduct }) => {
         <button
           className="Floating-btn postion wishlist-btn"
           onClick={() => {
-            if (!user) {
+            if (!encodedToken) {
               navigate("/auth", {
                 state: { from: pathName },
                 replace: true,
@@ -77,7 +77,7 @@ export const Card = ({ productDetails, sortProduct }) => {
           {/* price  */}
           <div className="card  color text-left">
             <div className="mgT-4 fW-500">
-              &#8377;{productDetails.discountedPrice}{" "}
+              &#8377;{productDetails.discountedPrice}
               <span className="original-price  fW-500">
                 &#8377;{productDetails.originalPrice}
               </span>
@@ -90,9 +90,9 @@ export const Card = ({ productDetails, sortProduct }) => {
 
           {/* add to cart  */}
           <button
-            className="btn solid-pri-btn width100 mg-top8 w400"
+            className="btn blue-btn width100 mg-top8 w400"
             onClick={() => {
-              if (!user) {
+              if (!encodedToken) {
                 navigate("/auth", {
                   state: { from: pathName },
                   replace: true,

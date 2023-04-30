@@ -5,8 +5,12 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
-  const [encodedToken, setEncodedToken] = useState();
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user")) ?? { firstName: "" }
+  );
+  const [encodedToken, setEncodedToken] = useState(
+    localStorage.getItem("flashToken")
+  );
 
   const logInAuth = async (loginDetails) => {
     try {
@@ -17,6 +21,7 @@ const AuthProvider = ({ children }) => {
 
       if (response.status === 200) {
         localStorage.setItem("flashToken", response.data.encodedToken);
+        localStorage.setItem("user", JSON.stringify(response.data.foundUser));
         setUser(response.data.foundUser);
         setEncodedToken(response.data.encodedToken);
       }

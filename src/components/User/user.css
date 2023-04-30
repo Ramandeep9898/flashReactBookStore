@@ -31,8 +31,8 @@
 .input-body {
   width: 30%;
 }
-/* .card-basic-shadow {
-  -webkit-box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7);
-  -moz-box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7);
-  box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7);
-} */
+.card-basic-shadow {
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(194, 194, 194, 0.6);
+  /* -moz-box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7);
+  box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7); */
+}

@@ -18,7 +18,12 @@ const User = () => {
           </button>
           <div className="divider-vertical mgT-16"></div>
 
-          <button className="h5 color capitalize fW-600 mgT-16">Logout </button>
+          <button
+            className="h5 color capitalize fW-600 mgT-16"
+            onClick={() => logOutAuth()}
+          >
+            Logout{" "}
+          </button>
         </section>
         <section className="section-info">
           <p className="h5 color capitalize fW-600 mgT-16">Profile Details</p>

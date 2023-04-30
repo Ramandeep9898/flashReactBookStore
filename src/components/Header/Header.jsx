@@ -11,7 +11,7 @@ import { useCart } from "../../contexts/useCart";
 const Header = () => {
   const { cart } = useCart();
   const { wishList } = useWishList();
-  const { user } = useAuth();
+  const { user, encodedToken } = useAuth();
   console.log(user);
   return (
     <header className="product-page-header">
@@ -102,7 +102,7 @@ const Header = () => {
         <section className="nav-container-endsec">
           <Link to="/productListingPage">
             <div className="badge-on-avatar navbar-icons">
-              {user ? (
+              {encodedToken ? (
                 <Link to="/user">
                   <div className="navbar-icons">
                     <div className="nav-options-icon  badge-on-avatar">

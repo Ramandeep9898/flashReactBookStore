@@ -182,8 +182,8 @@ const ProductDetails = ({
         <div className="divider-vertical mgT-16"></div>
         <div className="h2 color fW-500 mgT-16">Other Books of {author}</div>
         <div className="mgT-20 authors-book-wrapper">
-          {bookSortByAuthor.map((book) => {
-            return <Card productDetails={book} />;
+          {bookSortByAuthor.map((book, i) => {
+            return <Card productDetails={book} key={i} />;
           })}
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useAuth } from "../../customHooks/useAuth";
 
 const PrivateRoute = () => {
   const { encodedToken, user } = useAuth();
+  console.log(encodedToken);
   const location = useLocation();
   return encodedToken ? (
     <Outlet />

@@ -7,8 +7,8 @@ export const MostPopularCategory = () => {
   console.log(popularBooks);
   return (
     <>
-      {popularBooks.map((books) => {
-        return <Card productDetails={books} />;
+      {popularBooks.map((books, i) => {
+        return <Card productDetails={books} key={i} />;
       })}
     </>
   );

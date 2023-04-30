@@ -30,16 +30,16 @@ const Login = ({ setAuthVal }) => {
       <main Name="login-main">
         <div className="login-container">
           <div className="login-body">
-            <p className="h3 color capitalize fW-700 text-center">login</p>
+            <p className="form-heading ">Welcome Back to FlashKart</p>
             <div className="input-box mgT-20">
               <div>{errorMessage.message}</div>
-              <label for="email" className="textarea-label">
+              {/* <label for="email" className="textarea-label">
                 email
-              </label>
+              </label> */}
               <input
                 id="email"
                 type="email"
-                className="input"
+                className="input-updated"
                 placeholder="you@example.com"
                 value={loginDetails.email}
                 valide
@@ -50,14 +50,14 @@ const Login = ({ setAuthVal }) => {
             </div>
 
             <div className="input-box mgT-20">
-              <label for="password" className="textarea-label">
+              {/* <label for="password" className="textarea-label">
                 password
-              </label>
+              </label> */}
               <input
                 id="password"
                 type="password"
-                className="input"
-                placeholder="**********"
+                className="input-updated"
+                placeholder="Password"
                 valide
                 value={loginDetails.password}
                 onChange={(e) => {
@@ -70,12 +70,12 @@ const Login = ({ setAuthVal }) => {
             </div>
             <div className="login-remember-ad-forget-pass dis-f">
               <div className="remen-me mgT-20">
-                <input type="checkbox" />
-                <label className="textarea-label">Remember Me</label>
+                {/* <input type="checkbox" /> */}
+                {/* <label className="textarea-label">Remember Me</label> */}
               </div>
-              <div className="forget-pass">
+              <div className="forget-pass mgT-20">
                 <span
-                  className="textarea-label"
+                  className="textarea-label cursor"
                   onClick={(e) => {
                     e.preventDefault();
                     setLoginDetails(testLoginDetails);
@@ -85,22 +85,29 @@ const Login = ({ setAuthVal }) => {
                 </span>
               </div>
             </div>
-            <button
-              className="btn solid-pri-btn width100 mgT-20"
-              onClick={() => {
-                loginHandler();
-              }}
-            >
-              login
-            </button>
 
-            <p
-              className="h5 color capitalize fW-500 text-center mgT-20"
-              onClick={() => {
-                setAuthVal(false);
-              }}
-            >
-              create new account &#62;
+            <div className="absolute mg-top16">
+              <div className="gradient w100 mgT-40"></div>
+
+              <button
+                className="btn black-btn big-btn w100"
+                onClick={() => {
+                  loginHandler();
+                }}
+              >
+                login
+              </button>
+            </div>
+            <p className="h5 color  fW-500 text-center mgT-20">
+              Don’t have an account?{" "}
+              <span
+                className=" underline cursor"
+                onClick={() => {
+                  setAuthVal(false);
+                }}
+              >
+                SignUp Now!
+              </span>
             </p>
           </div>
         </div>

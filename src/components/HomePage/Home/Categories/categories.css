@@ -84,10 +84,10 @@
 }
 .svg-pink {
   font-size: 30px;
-  /* width: 35px; */
+  width: 35px;
   position: absolute;
-  top: 19px;
-  left: 20px;
+  top: 15px;
+  left: 18px;
   color: #e11d48;
   fill: none;
 }
@@ -112,4 +112,18 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: var(--heading-black);
+}
+.svg-green-bg {
+  /* fill: rgba(245, 158, 11, 0.2); */
+  width: 70px;
+  fill: rgba(0, 128, 0, 0.2);
+}
+.svg-green {
+  font-size: 30px;
+  /* width: 35px; */
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: green;
+  fill: none;
 }
