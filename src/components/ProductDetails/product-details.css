@@ -1,0 +1,63 @@
+.width80 {
+  width: 80%;
+}
+.w100 {
+  width: 100%;
+}
+.w50 {
+  width: 50%;
+}
+.display-play-img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.gap-10 {
+  gap: 10px;
+}
+.outline-blue {
+  border: 1px solid #007fff;
+  color: #007fff;
+  font-weight: 400;
+}
+
+.pincode-input {
+  border: 2px solid rgba(128, 128, 128, 0.8);
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  min-width: 50%;
+  border-radius: 8px;
+}
+.link {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: -60px;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  color: #007fff;
+}
+.black-btn {
+  padding: 16px 24px;
+  background-color: #303030;
+  font-weight: 400;
+  border-radius: 8px;
+}
+.black-btn-outlined {
+  border: 1px solid #303030;
+  color: #303030;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 400;
+}
+.layout {
+  padding: 1.5rem;
+}
+.authors-book-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}

@@ -1,0 +1,55 @@
+.login-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.login-body {
+  min-height: 500px;
+  width: 500px;
+  /* padding: 50px 70px; */
+  border-radius: 8px;
+}
+.login-remember-ad-forget-pass {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.input-updated {
+  border: 2px solid rgba(128, 128, 128, 0.8);
+  padding: 16px;
+  font-family: "Poppins", sans-serif;
+
+  font-size: 16px;
+  outline: none;
+  min-width: 100%;
+  border-radius: 8px;
+}
+.gradient {
+  height: 30px;
+  background: linear-gradient(
+    90deg,
+    #44ff9a -0.55%,
+    #44b0ff 22.86%,
+    #8b44ff 48.36%,
+    #ff6644 73.33%,
+    #ebff70 99.34%
+  );
+  filter: blur(25px);
+}
+.absolute > button {
+  position: relative;
+  top: -46px;
+}
+.underline {
+  text-decoration: underline;
+}
+.cursor {
+  cursor: pointer;
+}
+.form-heading {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+}

@@ -1,0 +1,12 @@
+.wishlist-cards-section {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.heading {
+  text-align: center;
+}
+.empty-layout {
+  height: 80vh;
+}

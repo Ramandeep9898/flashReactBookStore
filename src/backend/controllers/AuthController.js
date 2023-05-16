@@ -119,7 +119,6 @@ export const loginHandler = function (schema, request) {
  * */
 
 export const verifyUser = function (schema, request) {
-  console.log("jdchjs");
   const { encodedToken } = JSON.parse(request.requestBody);
   const decodedToken = jwt.verify(
     encodedToken,

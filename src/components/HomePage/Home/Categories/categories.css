@@ -1,0 +1,129 @@
+.categories {
+  padding: 30px 0;
+}
+
+.svg-blue-bg {
+  fill: rgba(124, 58, 237, 0.2);
+  width: 60px;
+}
+.svg-blue {
+  width: 35px;
+  position: absolute;
+  left: 12px;
+  stroke: rgb(124, 58, 237);
+  fill: none;
+}
+
+.categories-card-container {
+  padding: 50px 0px 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.categories-card-img {
+  width: 300px;
+  height: 200px;
+  font-size: 48px;
+  padding: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  transition: all 0.3s ease 0s;
+}
+.card-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.categories-card-img > h2 {
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 700;
+  color: var(--heading-black);
+}
+.categories-card-img > p {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--heading-black);
+}
+.SVG {
+  width: 100%;
+  height: 100%;
+}
+.categories-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.categories-card > span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-text);
+  cursor: pointer;
+}
+.outline-btn {
+  border: 2px solid blue;
+  color: blue;
+  font-family: "Poppins", sans-serif;
+  width: fit-content;
+
+  font-weight: 500;
+}
+.outline-btn > svg {
+  width: 30px;
+}
+.svg-pink-bg {
+  fill: rgba(225, 29, 72, 0.2);
+  width: 70px;
+}
+.svg-pink {
+  font-size: 30px;
+  width: 35px;
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  color: #e11d48;
+  fill: none;
+}
+.svg-yellow-bg {
+  fill: rgba(245, 158, 11, 0.2);
+  width: 70px;
+}
+.svg-yellow {
+  font-size: 35px;
+  /* width: 35px; */
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  color: #f59e0b;
+  fill: none;
+}
+.categories-popular {
+  padding: 80px 120px 0 120px;
+}
+.categories-popular > p {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--heading-black);
+}
+.svg-green-bg {
+  /* fill: rgba(245, 158, 11, 0.2); */
+  width: 70px;
+  fill: rgba(0, 128, 0, 0.2);
+}
+.svg-green {
+  font-size: 30px;
+  /* width: 35px; */
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: green;
+  fill: none;
+}

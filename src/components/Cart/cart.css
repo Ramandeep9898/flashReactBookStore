@@ -1,0 +1,122 @@
+.vert-cards {
+  flex-direction: column;
+  gap: 10px;
+}
+.delete-btn {
+  width: 25px;
+  border: none;
+  background-color: transparent;
+}
+.cart-layout {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 200px;
+}
+.card-vertical-updated {
+  display: flex;
+  border-radius: 0 4px 4px 0;
+}
+
+.cart-container {
+  /* box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+  /* -webkit-box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7);
+  box-shadow: 0px 0px 8px 0px rgba(194, 194, 194, 0.7); */
+  border-radius: 8px;
+  width: 60%;
+  padding: 0 32px 32px 32px;
+}
+.cart-wrapper {
+  overflow-y: scroll;
+  height: 450px;
+}
+.cart-wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.card-basic-updated {
+  position: relative;
+  text-align: center;
+  /* background-color: #c4c4c480; */
+  border-radius: 8px;
+}
+.card-basic {
+  position: relative;
+  text-align: center;
+  width: 284px;
+  background-color: rgba(196, 196, 196, 0.15);
+
+  border-radius: 8px;
+}
+.card-typo-vertical {
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.card-updated {
+  width: 400px;
+  /* overflow-wrap: break-word; */
+  white-space: nowrap;
+  /* width: 260px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.gray-btn {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  gap: 10px;
+  background-color: rgba(128, 128, 128, 0.8);
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.img-container {
+  width: 100px;
+  height: 120px;
+  background-color: rgba(196, 196, 196, 0.15);
+}
+.quantity-btn {
+  cursor: pointer;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.align-center {
+  align-items: center;
+}
+.card {
+  font-size: 18px;
+}
+.card-subtitle {
+  font-size: 14px;
+  color: rgba(128, 128, 128, 0.8);
+}
+.discount {
+  font-size: 15px;
+  font-weight: 500;
+  color: red;
+}
+.postion-l-0 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.w-40 {
+  width: 40%;
+}
